@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 170 110" fill="none">
+  <defs>
+    <linearGradient id="autoYellow" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFC72C" />
+      <stop offset="100%" stop-color="#EAA600" />
+    </linearGradient>
+    <linearGradient id="autoGreen" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#00A86B" />
+      <stop offset="100%" stop-color="#00774D" />
+    </linearGradient>
+  </defs>
+  <!-- Shadow -->
+  <ellipse cx="85" cy="98" rx="72" ry="7" fill="#000000" opacity="0.14" />
+  <!-- Wheels -->
+  <circle cx="44" cy="80" r="17" fill="#1E293B" />
+  <circle cx="44" cy="80" r="10" fill="#CBD5E1" />
+  <circle cx="44" cy="80" r="4" fill="#0F172A" />
+  <circle cx="128" cy="80" r="17" fill="#1E293B" />
+  <circle cx="128" cy="80" r="10" fill="#CBD5E1" />
+  <circle cx="128" cy="80" r="4" fill="#0F172A" />
+  
+  <!-- Auto Rickshaw Body - Bottom Green -->
+  <path d="M30 78 L142 78 C 146 78, 148 72, 144 65 L132 50 L32 50 C 26 50, 24 60, 24 68 L24 72 C 24 76, 26 78, 30 78 Z" fill="url(#autoGreen)" />
+  
+  <!-- Roof / Top Yellow -->
+  <path d="M32 50 L132 50 L118 22 C 114 18, 52 18, 42 22 L32 50 Z" fill="url(#autoYellow)" />
+  <path d="M36 22 L120 22" stroke="#B45309" stroke-width="2" />
+  
+  <!-- Windshield front & Open side cabin -->
+  <path d="M116 26 L128 48 L104 48 L100 26 Z" fill="#E0F2FE" opacity="0.85" stroke="#0F172A" stroke-width="1.5" />
+  <!-- Passenger Opening -->
+  <path d="M44 32 L94 32 L92 68 L44 68 Z" fill="#0F172A" opacity="0.85" />
+  <rect x="52" y="48" width="34" height="18" rx="3" fill="#64748B" />
+  
+  <!-- Meter & Headlight -->
+  <circle cx="140" cy="58" r="5" fill="#FEF08A" stroke="#B45309" stroke-width="1.5" />
+  <!-- Front bumper / mudguard -->
+  <path d="M136 76 L148 76" stroke="#475569" stroke-width="4" stroke-linecap="round" />
+</svg>

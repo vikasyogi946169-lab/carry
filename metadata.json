@@ -1,0 +1,7 @@
+{
+  "name": "Vahan Setu",
+  "description": "Connecting India, One Journey at a Time. India's modern ride booking, outstation, and logistics transport platform.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+

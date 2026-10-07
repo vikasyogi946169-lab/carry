@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vehicles & Fleet Catalog — Vahan Setu | Two-Wheelers to Heavy Commercial Trucks</title>
+  <meta name="description" content="Explore Vahan Setu's verified vehicle fleet across India: Bike taxi, Auto, Mini, Sedan, SUV, Luxury, Tempo Traveller, Pickup trucks, and Freight Containers." />
+  <link rel="icon" type="image/svg+xml" href="images/logo/favicon.svg" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- Sticky Navbar -->
+  <header class="vs-navbar">
+    <div class="vs-container-wide">
+      <div class="vs-nav-wrap">
+        <a href="index.html" class="vs-brand" aria-label="Vahan Setu Home">
+          <img src="images/logo/vahan-setu-logo.svg" alt="Vahan Setu Logo" class="vs-brand-logo-img" />
+        </a>
+
+        <nav aria-label="Primary Navigation">
+          <ul class="vs-nav-menu">
+            <li><a href="index.html" class="vs-nav-link">Home</a></li>
+            <li><a href="booking.html" class="vs-nav-link">Book Ride</a></li>
+            <li><a href="services.html" class="vs-nav-link">Services</a></li>
+            <li><a href="vehicles.html" class="vs-nav-link is-active">Vehicles</a></li>
+            <li><a href="outstation.html" class="vs-nav-link">Outstation</a></li>
+            <li><a href="logistics.html" class="vs-nav-link">Logistics</a></li>
+            <li><a href="tracking.html" class="vs-nav-link">Track Vehicle</a></li>
+            <li><a href="location.html" class="vs-nav-link">Location</a></li>
+            <li><a href="about.html" class="vs-nav-link">About</a></li>
+            <li><a href="contact.html" class="vs-nav-link">Contact</a></li>
+          </ul>
+        </nav>
+
+        <div class="vs-nav-actions">
+          <button type="button" class="vs-theme-btn js-theme-toggle" aria-label="Toggle Dark/Light Mode">
+            <span class="js-theme-icon"></span>
+          </button>
+          <div class="js-nav-auth" style="display:flex; align-items:center; gap:8px;">
+            <a href="login.html" class="vs-btn vs-btn-secondary" style="padding: 8px 16px;">Login</a>
+          </div>
+          <a href="booking.html" class="vs-btn vs-btn-primary">Book Now</a>
+          <button type="button" class="vs-mobile-toggle" aria-label="Open Navigation Menu">
+            <div class="vs-hamburger"><span></span><span></span><span></span></div>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <aside class="vs-mobile-drawer">
+    <ul class="vs-mobile-menu">
+      <li><a href="index.html">Home <span>➔</span></a></li>
+      <li><a href="booking.html">Book Ride <span>➔</span></a></li>
+      <li><a href="services.html">Services <span>➔</span></a></li>
+      <li><a href="vehicles.html" class="is-active">Vehicles <span>➔</span></a></li>
+      <li><a href="outstation.html">Outstation Travel <span>➔</span></a></li>
+      <li><a href="logistics.html">Goods & Logistics <span>➔</span></a></li>
+      <li><a href="driver.html">Driver Partner Registration <span>➔</span></a></li>
+      <li><a href="tracking.html">Live Vehicle Tracking <span>➔</span></a></li>
+      <li><a href="location.html">India Transit Map <span>➔</span></a></li>
+      <li><a href="about.html">About Vahan Setu <span>➔</span></a></li>
+      <li><a href="contact.html">Contact Us (Vikas Yogi) <span>➔</span></a></li>
+    </ul>
+  </aside>
+
+  <!-- Vehicle Fleet Main Section -->
+  <main class="vs-section">
+    <div class="vs-container">
+      
+      <!-- Section Header -->
+      <div class="vs-section-header vs-reveal">
+        <div class="vs-section-kicker">Verified National Fleet</div>
+        <h1 class="vs-section-title">Explore Vahan Setu Fleet by Category</h1>
+        <p class="vs-section-desc">
+          Compare seating capacities, luggage specs, base fares, and per-km pricing. Select any vehicle to launch the instant reservation engine.
+        </p>
+      </div>
+
+      <!-- Filter Controls -->
+      <div class="vs-fleet-filter-bar vs-reveal">
+        <button type="button" class="vs-filter-btn is-active" data-filter="all">All Vehicles (9)</button>
+        <button type="button" class="vs-filter-btn" data-filter="city">City & Commute</button>
+        <button type="button" class="vs-filter-btn" data-filter="group">Group & Luxury</button>
+        <button type="button" class="vs-filter-btn" data-filter="cargo">Cargo & Logistics</button>
+      </div>
+
+      <!-- Fleet Grid (All 9 Vehicle Models Displayed) -->
+      <div class="vs-fleet-grid" id="fleet-container">
+        
+        <!-- 1. Bike -->
+        <div class="vs-vehicle-card vs-reveal" data-category="city">
+          <div class="vs-vehicle-img-wrap">
+            <img src="images/bikes/bike.svg" alt="Bike Taxi" />
+          </div>
+          <div class="vs-vehicle-header">
+            <h3 class="vs-vehicle-name">Bike Taxi</h3>
+            <span class="vs-vehicle-capacity">👤 1 Rider</span>
+          </div>
+          <div class="vs-vehicle-price">₹25 <span>Base + ₹9/km</span></div>
+          <ul class="vs-vehicle-features">
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> Sanitized helmet & hairnet</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> Perfect for solo peak-hour transit</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> Zero wait time in city lanes</li>
+          </ul>
+          <a href="booking.html?vehicle=bike" class="vs-btn vs-btn-primary vs-btn-block">Select & Book Bike</a>
+        </div>
+
+        <!-- 2. Auto -->
+        <div class="vs-vehicle-card vs-reveal" data-category="city">
+          <div class="vs-vehicle-img-wrap">
+            <img src="images/autos/auto.svg" alt="Auto Rickshaw" />
+          </div>
+          <div class="vs-vehicle-header">
+            <h3 class="vs-vehicle-name">Auto Rickshaw</h3>
+            <span class="vs-vehicle-capacity">👥 3 Passengers</span>
+          </div>
+          <div class="vs-vehicle-price">₹35 <span>Base + ₹12/km</span></div>
+          <ul class="vs-vehicle-features">
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> Doorstep digital dispatch</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> Open-air ventilation & CNG eco-drive</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> Compact baggage space</li>
+          </ul>
+          <a href="booking.html?vehicle=auto" class="vs-btn vs-btn-primary vs-btn-block">Select & Book Auto</a>
+        </div>
+
+        <!-- 3. Mini -->
+        <div class="vs-vehicle-card vs-reveal" data-category="city">
+          <div class="vs-vehicle-img-wrap">
+            <img src="images/cars/mini.svg" alt="Mini Hatchback" />
+          </div>
+          <div class="vs-vehicle-header">
+            <h3 class="vs-vehicle-name">Mini Hatchback</h3>
+            <span class="vs-vehicle-capacity">👥 4 Passengers</span>
+          </div>
+          <div class="vs-vehicle-price">₹60 <span>Base + ₹15/km</span></div>
+          <ul class="vs-vehicle-features">
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> Swift, WagonR, Tiago models</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> Powerful chilled AC</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> Boot accommodates 1 medium trolley</li>
+          </ul>
+          <a href="booking.html?vehicle=mini" class="vs-btn vs-btn-primary vs-btn-block">Select & Book Mini</a>
+        </div>
+
+        <!-- 4. Sedan -->
+        <div class="vs-vehicle-card vs-reveal" data-category="city">
+          <div class="vs-vehicle-img-wrap">
+            <img src="images/cars/sedan.svg" alt="Prime Sedan" />
+          </div>
+          <div class="vs-vehicle-header">
+            <h3 class="vs-vehicle-name">Prime Sedan</h3>
+            <span class="vs-vehicle-capacity">👥 4 Passengers</span>
+          </div>
+          <div class="vs-vehicle-price">₹85 <span>Base + ₹18/km</span></div>
+          <ul class="vs-vehicle-features">
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> Dzire, Etios, Amaze models</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> Extended legroom & plush seats</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> 2 Large trolleys + 1 cabin bag</li>
+          </ul>
+          <a href="booking.html?vehicle=sedan" class="vs-btn vs-btn-primary vs-btn-block">Select & Book Sedan</a>
+        </div>
+
+        <!-- 5. SUV -->
+        <div class="vs-vehicle-card vs-reveal" data-category="group">
+          <div class="vs-vehicle-img-wrap">
+            <img src="images/cars/suv.svg" alt="Prime SUV" />
+          </div>
+          <div class="vs-vehicle-header">
+            <h3 class="vs-vehicle-name">Prime SUV</h3>
+            <span class="vs-vehicle-capacity">👥 6 Passengers</span>
+          </div>
+          <div class="vs-vehicle-price">₹120 <span>Base + ₹24/km</span></div>
+          <ul class="vs-vehicle-features">
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> Ertiga, Innova, Carens models</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> Dual AC blower vents</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> 3-4 Large suitcases with roof carrier</li>
+          </ul>
+          <a href="booking.html?vehicle=suv" class="vs-btn vs-btn-primary vs-btn-block">Select & Book SUV</a>
+        </div>
+
+        <!-- 6. Luxury -->
+        <div class="vs-vehicle-card vs-reveal" data-category="group">
+          <div class="vs-vehicle-img-wrap">
+            <img src="images/cars/luxury.svg" alt="Executive Luxury" />
+          </div>
+          <div class="vs-vehicle-header">
+            <h3 class="vs-vehicle-name">Executive Luxury</h3>
+            <span class="vs-vehicle-capacity">👥 4 Passengers</span>
+          </div>
+          <div class="vs-vehicle-price">₹180 <span>Base + ₹32/km</span></div>
+          <ul class="vs-vehicle-features">
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> Camry, Mercedes C-Class, Audi A4</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> Dedicated English-speaking chauffeur</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> Wi-Fi, refreshments & daily paper</li>
+          </ul>
+          <a href="booking.html?vehicle=luxury" class="vs-btn vs-btn-primary vs-btn-block">Select & Book Luxury</a>
+        </div>
+
+        <!-- 7. Tempo Traveller -->
+        <div class="vs-vehicle-card vs-reveal" data-category="group">
+          <div class="vs-vehicle-img-wrap">
+            <img src="images/cars/tempo.svg" alt="Tempo Traveller" />
+          </div>
+          <div class="vs-vehicle-header">
+            <h3 class="vs-vehicle-name">Tempo Traveller</h3>
+            <span class="vs-vehicle-capacity">👥 12-16 Passengers</span>
+          </div>
+          <div class="vs-vehicle-price">₹300 <span>Base + ₹42/km</span></div>
+          <ul class="vs-vehicle-features">
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> Force Motors 12/17 Seater Maharaja</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> Reclining captain pushback seats</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> Massive overhead & rear luggage bays</li>
+          </ul>
+          <a href="booking.html?vehicle=tempo" class="vs-btn vs-btn-primary vs-btn-block">Select & Book Tempo</a>
+        </div>
+
+        <!-- 8. Pickup Loader -->
+        <div class="vs-vehicle-card vs-reveal" data-category="cargo">
+          <div class="vs-vehicle-img-wrap">
+            <img src="images/trucks/pickup.svg" alt="Logistics Pickup" />
+          </div>
+          <div class="vs-vehicle-header">
+            <h3 class="vs-vehicle-name">Logistics Pickup (Tata Ace)</h3>
+            <span class="vs-vehicle-capacity">📦 1.2 Ton Payload</span>
+          </div>
+          <div class="vs-vehicle-price">₹250 <span>Base + ₹28/km</span></div>
+          <ul class="vs-vehicle-features">
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> Tata Ace, Mahindra Bolero Maxi Truck</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> Waterproof tarpaulin cover provided</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> Household shifting & commercial delivery</li>
+          </ul>
+          <a href="logistics.html" class="vs-btn vs-btn-primary vs-btn-block">Request Pickup Transport</a>
+        </div>
+
+        <!-- 9. Commercial Freight Truck -->
+        <div class="vs-vehicle-card vs-reveal" data-category="cargo">
+          <div class="vs-vehicle-img-wrap">
+            <img src="images/trucks/truck.svg" alt="Medium Freight Truck" />
+          </div>
+          <div class="vs-vehicle-header">
+            <h3 class="vs-vehicle-name">14ft Commercial Truck</h3>
+            <span class="vs-vehicle-capacity">📦 5 Ton Payload</span>
+          </div>
+          <div class="vs-vehicle-price">₹550 <span>Base + ₹48/km</span></div>
+          <ul class="vs-vehicle-features">
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> Eicher Pro, Ashok Leyland 14ft Closed Body</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> GPS telematics & consignment seal</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> Inter-state e-Way bill compliance</li>
+          </ul>
+          <a href="logistics.html" class="vs-btn vs-btn-primary vs-btn-block">Request Freight Truck</a>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Interactive JavaScript for Category Filtering & Highlighting -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const filterBtns = document.querySelectorAll('.vs-filter-btn');
+      const cards = document.querySelectorAll('#fleet-container .vs-vehicle-card');
+
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          filterBtns.forEach(b => b.classList.remove('is-active'));
+          btn.classList.add('is-active');
+
+          const category = btn.getAttribute('data-filter');
+          cards.forEach(card => {
+            if (category === 'all' || card.getAttribute('data-category') === category) {
+              card.style.display = 'flex';
+            } else {
+              card.style.display = 'none';
+            }
+          });
+        });
+      });
+
+      // Highlight card on click
+      cards.forEach(card => {
+        card.addEventListener('click', (e) => {
+          if (!e.target.closest('a')) {
+            cards.forEach(c => c.classList.remove('is-selected'));
+            card.classList.add('is-selected');
+          }
+        });
+      });
+    });
+  </script>
+
+  <!-- Footer -->
+  <footer class="vs-footer">
+    <div class="vs-container">
+      <div class="vs-footer-bottom">
+        <div>© 2026 Vahan Setu Technologies Ltd. All rights reserved. Connecting India, One Journey at a Time.</div>
+        <div>Contact: Vikas Yogi (+91 9461695205)</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

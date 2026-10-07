@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Live Vehicle Tracking — Vahan Setu | Real-Time Telematics & Ride Radar</title>
+  <meta name="description" content="Track your Vahan Setu ride or logistics consignment live on our interactive transit radar. Monitor ETA, driver speed, route coordinates, and SOS safety." />
+  <link rel="icon" type="image/svg+xml" href="images/logo/favicon.svg" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="js-tracking-page">
+
+  <!-- Sticky Navbar -->
+  <header class="vs-navbar">
+    <div class="vs-container-wide">
+      <div class="vs-nav-wrap">
+        <a href="index.html" class="vs-brand" aria-label="Vahan Setu Home">
+          <img src="images/logo/vahan-setu-logo.svg" alt="Vahan Setu Logo" class="vs-brand-logo-img" />
+        </a>
+
+        <nav aria-label="Primary Navigation">
+          <ul class="vs-nav-menu">
+            <li><a href="index.html" class="vs-nav-link">Home</a></li>
+            <li><a href="booking.html" class="vs-nav-link">Book Ride</a></li>
+            <li><a href="services.html" class="vs-nav-link">Services</a></li>
+            <li><a href="vehicles.html" class="vs-nav-link">Vehicles</a></li>
+            <li><a href="outstation.html" class="vs-nav-link">Outstation</a></li>
+            <li><a href="logistics.html" class="vs-nav-link">Logistics</a></li>
+            <li><a href="tracking.html" class="vs-nav-link is-active">Track Vehicle</a></li>
+            <li><a href="location.html" class="vs-nav-link">Location</a></li>
+            <li><a href="about.html" class="vs-nav-link">About</a></li>
+            <li><a href="contact.html" class="vs-nav-link">Contact</a></li>
+          </ul>
+        </nav>
+
+        <div class="vs-nav-actions">
+          <button type="button" class="vs-theme-btn js-theme-toggle" aria-label="Toggle Dark/Light Mode">
+            <span class="js-theme-icon"></span>
+          </button>
+          <div class="js-nav-auth" style="display:flex; align-items:center; gap:8px;">
+            <a href="login.html" class="vs-btn vs-btn-secondary" style="padding: 8px 16px;">Login</a>
+          </div>
+          <a href="booking.html" class="vs-btn vs-btn-primary">Book Now</a>
+          <button type="button" class="vs-mobile-toggle" aria-label="Open Navigation Menu">
+            <div class="vs-hamburger"><span></span><span></span><span></span></div>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <aside class="vs-mobile-drawer">
+    <ul class="vs-mobile-menu">
+      <li><a href="index.html">Home <span>➔</span></a></li>
+      <li><a href="booking.html">Book Ride <span>➔</span></a></li>
+      <li><a href="services.html">Services <span>➔</span></a></li>
+      <li><a href="vehicles.html">Vehicles <span>➔</span></a></li>
+      <li><a href="outstation.html">Outstation Travel <span>➔</span></a></li>
+      <li><a href="logistics.html">Goods & Logistics <span>➔</span></a></li>
+      <li><a href="driver.html">Driver Partner Registration <span>➔</span></a></li>
+      <li><a href="tracking.html" class="is-active">Live Vehicle Tracking <span>➔</span></a></li>
+      <li><a href="location.html">India Transit Map <span>➔</span></a></li>
+      <li><a href="about.html">About Vahan Setu <span>➔</span></a></li>
+      <li><a href="contact.html">Contact Us (Vikas Yogi) <span>➔</span></a></li>
+    </ul>
+  </aside>
+
+  <!-- Live Tracking Dashboard -->
+  <main class="vs-section" style="padding-top: 36px;">
+    <div class="vs-container-wide">
+      
+      <!-- Top Status Header -->
+      <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 24px; flex-wrap: wrap; gap: 16px;">
+        <div>
+          <span style="font-size: 0.82rem; font-weight: 800; color: var(--vs-primary); letter-spacing: 1.5px; text-transform: uppercase;">
+            Live GPS Telematics Dashboard
+          </span>
+          <h1 style="font-size: clamp(1.8rem, 3vw, 2.4rem); font-weight: 900; color: var(--vs-text);">
+            Vehicle Tracking & En-Route Radar
+          </h1>
+        </div>
+
+        <!-- Simulation Controls -->
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <button type="button" id="track-start-btn" class="vs-btn vs-btn-primary" style="padding: 10px 18px;">
+            ▶ Start Tracking
+          </button>
+          <button type="button" id="track-stop-btn" class="vs-btn vs-btn-secondary" style="padding: 10px 18px;">
+            ⏸ Pause
+          </button>
+          <button type="button" id="track-reset-btn" class="vs-btn vs-btn-outline" style="padding: 10px 18px;">
+            🔄 Reset
+          </button>
+        </div>
+      </div>
+
+      <!-- Main Tracking Layout: Left Sidebar Data + Right Live Interactive Map -->
+      <div class="vs-tracking-layout">
+        
+        <!-- Left: Ride & Driver Card -->
+        <div class="vs-tracking-card vs-reveal">
+          
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px;">
+            <div id="track-status" class="vs-tracking-status-badge">
+              <span class="vs-status-pulse"></span> Live En Route (GPS Active)
+            </div>
+            <span style="font-size: 0.82rem; font-weight: 700; color: var(--vs-text-muted); font-family: monospace;">
+              ID: VS-2026-89421
+            </span>
+          </div>
+
+          <!-- Quick Metrics Grid -->
+          <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; background: var(--vs-surface-alt); padding: 14px; border-radius: var(--radius-md); margin-bottom: 20px;">
+            <div>
+              <span style="font-size: 0.72rem; text-transform: uppercase; font-weight: 700; color: var(--vs-text-muted);">Est. Arrival</span>
+              <div id="track-eta" style="font-size: 1.25rem; font-weight: 900; color: var(--vs-primary); font-family: 'Space Grotesk', sans-serif;">18 mins</div>
+            </div>
+            <div>
+              <span style="font-size: 0.72rem; text-transform: uppercase; font-weight: 700; color: var(--vs-text-muted);">Remaining</span>
+              <div id="track-dist-remaining" style="font-size: 1.25rem; font-weight: 900; color: var(--vs-text); font-family: 'Space Grotesk', sans-serif;">11.8 km</div>
+            </div>
+            <div>
+              <span style="font-size: 0.72rem; text-transform: uppercase; font-weight: 700; color: var(--vs-text-muted);">Current Speed</span>
+              <div id="track-speed" style="font-size: 1.25rem; font-weight: 900; color: var(--vs-secondary-dark); font-family: 'Space Grotesk', sans-serif;">46 km/h</div>
+            </div>
+          </div>
+
+          <!-- Driver Information Box -->
+          <div class="vs-driver-box">
+            <div class="vs-driver-avatar">VS</div>
+            <div class="vs-driver-info" style="flex-grow: 1;">
+              <h4>Vikram Singh</h4>
+              <p>★ 4.9 (1,420+ Rides) · Verified Highway Captain</p>
+              <div style="font-size: 0.85rem; font-weight: 800; color: var(--vs-text); margin-top: 2px;">
+                Vehicle: Prime Sedan (DL 01 AB 4029)
+              </div>
+            </div>
+          </div>
+
+          <!-- Driver Contact Actions -->
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 24px;">
+            <a href="tel:9461695205" class="vs-btn vs-btn-secondary" style="padding: 10px; font-size: 0.85rem;">
+              📞 Call Driver
+            </a>
+            <a href="https://wa.me/919461695205" target="_blank" rel="noopener" class="vs-btn vs-btn-teal" style="padding: 10px; font-size: 0.85rem;">
+              💬 WhatsApp
+            </a>
+          </div>
+
+          <!-- Route Locations -->
+          <div style="border-top: 1px solid var(--vs-border); padding-top: 16px; margin-bottom: 20px;">
+            <div style="margin-bottom: 12px;">
+              <span style="font-size: 0.72rem; text-transform: uppercase; font-weight: 700; color: var(--vs-secondary);">● Current Origin / Pickup:</span>
+              <div style="font-size: 0.92rem; font-weight: 700; color: var(--vs-text);">Connaught Place Inner Circle, Gate 4</div>
+            </div>
+            <div>
+              <span style="font-size: 0.72rem; text-transform: uppercase; font-weight: 700; color: var(--vs-primary);">■ Final Destination:</span>
+              <div style="font-size: 0.92rem; font-weight: 700; color: var(--vs-text);">IGI Airport Terminal 3, Departures Ramp</div>
+            </div>
+          </div>
+
+          <!-- Trip Timeline Steps -->
+          <ul class="vs-tracking-timeline">
+            <li class="vs-timeline-step is-complete js-timeline-step">
+              <h5>Booking Confirmed</h5>
+              <p>Driver accepted ride request (10:14 AM)</p>
+            </li>
+            <li class="vs-timeline-step is-complete js-timeline-step">
+              <h5>Driver Arrived at Pickup</h5>
+              <p>OTP verified successfully (10:18 AM)</p>
+            </li>
+            <li class="vs-timeline-step is-active js-timeline-step">
+              <h5>Trip In Progress (Express Highway)</h5>
+              <p>Passing Dhaula Kuan Flyover at optimal speed</p>
+            </li>
+            <li class="vs-timeline-step js-timeline-step">
+              <h5>Destination Arrival</h5>
+              <p>Approaching Aerocity Airport Express Corridor</p>
+            </li>
+          </ul>
+
+          <!-- Emergency SOS -->
+          <div style="background: rgba(239, 68, 68, 0.08); border: 1px solid rgba(239, 68, 68, 0.2); border-radius: var(--radius-md); padding: 12px; display: flex; align-items: center; justify-content: space-between;">
+            <div style="font-size: 0.8rem; color: #EF4444; font-weight: 700;">
+              🚨 24/7 Police & Safety Helpline
+            </div>
+            <a href="tel:9461695205" style="background: #EF4444; color: #fff; padding: 6px 14px; border-radius: var(--radius-sm); font-size: 0.75rem; font-weight: 800;">
+              SOS Alert
+            </a>
+          </div>
+
+        </div>
+
+        <!-- Right: Animated Simulated Vector Map Viewport -->
+        <div class="vs-tracking-map vs-reveal">
+          <svg class="vs-simulated-canvas" viewBox="0 0 600 500" fill="none">
+            <defs>
+              <linearGradient id="mapGridGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#070D1E" />
+                <stop offset="100%" stop-color="#0E172E" />
+              </linearGradient>
+              <linearGradient id="routeGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#00D2A0" />
+                <stop offset="100%" stop-color="#FF7A00" />
+              </linearGradient>
+              <filter id="radarGlow" x="-30%" y="-30%" width="160%" height="160%">
+                <feGaussianBlur stdDeviation="6" result="blur" />
+                <feComposite in="SourceGraphic" in2="blur" operator="over" />
+              </filter>
+            </defs>
+
+            <!-- Map Background -->
+            <rect width="600" height="500" fill="url(#mapGridGrad)" />
+
+            <!-- Road Grid Network lines -->
+            <g stroke="#1F2E52" stroke-width="1.2" opacity="0.6">
+              <line x1="0" y1="80" x2="600" y2="80" />
+              <line x1="0" y1="160" x2="600" y2="160" />
+              <line x1="0" y1="240" x2="600" y2="240" />
+              <line x1="0" y1="320" x2="600" y2="320" />
+              <line x1="0" y1="400" x2="600" y2="400" />
+              
+              <line x1="80" y1="0" x2="80" y2="500" />
+              <line x1="180" y1="0" x2="180" y2="500" />
+              <line x1="280" y1="0" x2="280" y2="500" />
+              <line x1="380" y1="0" x2="380" y2="500" />
+              <line x1="480" y1="0" x2="480" y2="500" />
+            </g>
+
+            <!-- Major Arterial Highways -->
+            <path d="M-20 440 L620 60" stroke="#16203D" stroke-width="32" stroke-linecap="round" />
+            <path d="M40 520 L580 -20" stroke="#1C2541" stroke-width="20" stroke-linecap="round" />
+
+            <!-- Active Ride Path: Connaught Place to Airport -->
+            <path id="track-path" d="M60 380 Q 250 320, 360 210 T 480 120" stroke="url(#routeGrad)" stroke-width="6" stroke-linecap="round" fill="none" filter="url(#radarGlow)" />
+            <path d="M60 380 Q 250 320, 360 210 T 480 120" stroke="#FFFFFF" stroke-width="2" stroke-dasharray="6,6" stroke-linecap="round" fill="none" opacity="0.8" />
+
+            <!-- Pickup Pin (Connaught Place) -->
+            <g transform="translate(60, 380)">
+              <circle cx="0" cy="0" r="12" fill="#00D2A0" opacity="0.3" />
+              <circle cx="0" cy="0" r="6" fill="#00D2A0" />
+              <circle cx="0" cy="0" r="2.5" fill="#FFFFFF" />
+              <text x="14" y="4" font-family="sans-serif" font-weight="700" font-size="12" fill="#FFFFFF">Pickup: Connaught Place</text>
+            </g>
+
+            <!-- Destination Pin (IGI Airport) -->
+            <g transform="translate(480, 120)">
+              <circle cx="0" cy="0" r="14" fill="#FF7A00" opacity="0.3" />
+              <circle cx="0" cy="0" r="7" fill="#FF7A00" />
+              <circle cx="0" cy="0" r="3" fill="#FFFFFF" />
+              <text x="-130" y="24" font-family="sans-serif" font-weight="700" font-size="12" fill="#FFFFFF">Drop: IGI Airport T3</text>
+            </g>
+
+            <!-- Moving Vehicle Marker (Interactive Animated GPS Coordinate) -->
+            <g id="track-marker" transform="translate(240, 290)">
+              <!-- Radar Pulse Ring -->
+              <circle cx="0" cy="0" r="24" fill="#38BDF8" opacity="0.25">
+                <animate attributeName="r" values="16;34;16" dur="2s" repeatCount="indefinite" />
+                <animate attributeName="opacity" values="0.4;0.05;0.4" dur="2s" repeatCount="indefinite" />
+              </circle>
+              <!-- Outer Glow -->
+              <circle cx="0" cy="0" r="14" fill="#0B132B" stroke="#38BDF8" stroke-width="2" />
+              <!-- Vehicle Symbol -->
+              <circle cx="0" cy="0" r="9" fill="#FF7A00" />
+              <polygon points="-3,-4 5,0 -3,4" fill="#FFFFFF" />
+            </g>
+
+            <!-- Map HUD Overlay Box -->
+            <g transform="translate(20, 20)">
+              <rect width="210" height="64" rx="8" fill="#0B132B" fill-opacity="0.85" stroke="#334155" stroke-width="1" />
+              <text x="14" y="26" font-family="sans-serif" font-weight="700" font-size="12" fill="#FFFFFF">VAHAN SETU GPS RADAR</text>
+              <text x="14" y="44" font-family="sans-serif" font-size="10" fill="#00D2A0">● SATELLITE TELEMETRY LOCKED</text>
+            </g>
+          </svg>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="vs-footer">
+    <div class="vs-container">
+      <div class="vs-footer-bottom">
+        <div>© 2026 Vahan Setu Technologies Ltd. All rights reserved. Connecting India, One Journey at a Time.</div>
+        <div>Contact: Vikas Yogi (+91 9461695205)</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

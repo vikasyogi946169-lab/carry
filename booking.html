@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book a Ride — Vahan Setu | Instant Cab, Auto & Bike Booking Across India</title>
+  <meta name="description" content="Book cabs, taxis, auto rickshaws, and bike rides across India with upfront pricing, no hidden charges, and verified drivers." />
+  <link rel="icon" type="image/svg+xml" href="images/logo/favicon.svg" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="js-booking-page">
+
+  <!-- Sticky Navbar -->
+  <header class="vs-navbar">
+    <div class="vs-container-wide">
+      <div class="vs-nav-wrap">
+        <a href="index.html" class="vs-brand" aria-label="Vahan Setu Home">
+          <img src="images/logo/vahan-setu-logo.svg" alt="Vahan Setu Logo" class="vs-brand-logo-img" />
+        </a>
+
+        <nav aria-label="Primary Navigation">
+          <ul class="vs-nav-menu">
+            <li><a href="index.html" class="vs-nav-link">Home</a></li>
+            <li><a href="booking.html" class="vs-nav-link is-active">Book Ride</a></li>
+            <li><a href="services.html" class="vs-nav-link">Services</a></li>
+            <li><a href="vehicles.html" class="vs-nav-link">Vehicles</a></li>
+            <li><a href="outstation.html" class="vs-nav-link">Outstation</a></li>
+            <li><a href="logistics.html" class="vs-nav-link">Logistics</a></li>
+            <li><a href="tracking.html" class="vs-nav-link">Track Vehicle</a></li>
+            <li><a href="location.html" class="vs-nav-link">Location</a></li>
+            <li><a href="about.html" class="vs-nav-link">About</a></li>
+            <li><a href="contact.html" class="vs-nav-link">Contact</a></li>
+          </ul>
+        </nav>
+
+        <div class="vs-nav-actions">
+          <button type="button" class="vs-theme-btn js-theme-toggle" aria-label="Toggle Dark/Light Mode">
+            <span class="js-theme-icon"></span>
+          </button>
+          <div class="js-nav-auth" style="display:flex; align-items:center; gap:8px;">
+            <a href="login.html" class="vs-btn vs-btn-secondary" style="padding: 8px 16px;">Login</a>
+          </div>
+          <button type="button" class="vs-mobile-toggle" aria-label="Open Navigation Menu">
+            <div class="vs-hamburger"><span></span><span></span><span></span></div>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <aside class="vs-mobile-drawer">
+    <ul class="vs-mobile-menu">
+      <li><a href="index.html">Home <span>➔</span></a></li>
+      <li><a href="booking.html" class="is-active">Book Ride <span>➔</span></a></li>
+      <li><a href="services.html">Services <span>➔</span></a></li>
+      <li><a href="vehicles.html">Vehicles <span>➔</span></a></li>
+      <li><a href="outstation.html">Outstation Travel <span>➔</span></a></li>
+      <li><a href="logistics.html">Goods & Logistics <span>➔</span></a></li>
+      <li><a href="driver.html">Driver Partner Registration <span>➔</span></a></li>
+      <li><a href="tracking.html">Live Vehicle Tracking <span>➔</span></a></li>
+      <li><a href="location.html">India Transit Map <span>➔</span></a></li>
+      <li><a href="about.html">About Vahan Setu <span>➔</span></a></li>
+      <li><a href="contact.html">Contact Us (Vikas Yogi) <span>➔</span></a></li>
+    </ul>
+  </aside>
+
+  <!-- Booking Main Content -->
+  <main class="vs-section" style="padding-top: 40px;">
+    <div class="vs-container">
+      <!-- Page Header -->
+      <div style="margin-bottom: 32px;" class="vs-reveal">
+        <span style="font-size: 0.85rem; font-weight: 800; color: var(--vs-primary); letter-spacing: 1.5px; text-transform: uppercase;">
+          Instant Reservation
+        </span>
+        <h1 style="font-size: clamp(2rem, 3.5vw, 2.8rem); font-weight: 900; color: var(--vs-text); margin-top: 4px;">
+          Book Your Vahan Setu Journey
+        </h1>
+        <p style="color: var(--vs-text-muted); font-size: 1.05rem;">
+          Complete all 6 steps below. Upfront guaranteed pricing, no surge surprises, instant SMS/WhatsApp confirmation.
+        </p>
+      </div>
+
+      <!-- 2-Column Booking Layout: Left Form + Right Live Summary -->
+      <div style="display: grid; grid-template-columns: 1.5fr 1fr; gap: 32px; align-items: start;">
+        
+        <!-- Left: Steps 1 to 4 -->
+        <div style="display: flex; flex-direction: column; gap: 28px;">
+          
+          <!-- Step 1 & 2: Locations -->
+          <div class="vs-booking-card vs-reveal" style="padding: 28px;">
+            <h3 style="font-size: 1.15rem; font-weight: 800; margin-bottom: 20px; display: flex; align-items: center; gap: 10px;">
+              <span style="background: var(--vs-primary); color: #fff; width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.8rem;">1</span>
+              Pickup & Drop Off Locations
+            </h3>
+
+            <div style="display: grid; grid-template-columns: 1fr; gap: 16px;">
+              <div class="vs-form-group">
+                <label class="vs-form-label" for="bk-pickup">
+                  <span style="color:var(--vs-secondary);">●</span> Step 1: Pickup Location
+                </label>
+                <div class="vs-input-wrapper">
+                  <span class="vs-input-icon">📍</span>
+                  <input type="text" id="bk-pickup" class="vs-input" placeholder="e.g. Connaught Place, New Delhi or Terminal 3" value="Connaught Place, New Delhi" />
+                </div>
+              </div>
+
+              <div class="vs-form-group">
+                <label class="vs-form-label" for="bk-drop">
+                  <span style="color:var(--vs-primary);">■</span> Step 2: Destination
+                </label>
+                <div class="vs-input-wrapper">
+                  <span class="vs-input-icon">🏁</span>
+                  <input type="text" id="bk-drop" class="vs-input" placeholder="e.g. Indira Gandhi International Airport" value="Indira Gandhi International Airport, T3" />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 3: Date, Time & Passengers -->
+          <div class="vs-booking-card vs-reveal" style="padding: 28px;">
+            <h3 style="font-size: 1.15rem; font-weight: 800; margin-bottom: 20px; display: flex; align-items: center; gap: 10px;">
+              <span style="background: var(--vs-primary); color: #fff; width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.8rem;">2</span>
+              Schedule & Passengers
+            </h3>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px;">
+              <div class="vs-form-group">
+                <label class="vs-form-label" for="bk-date">Date</label>
+                <div class="vs-input-wrapper">
+                  <span class="vs-input-icon">📅</span>
+                  <input type="date" id="bk-date" class="vs-input" />
+                </div>
+              </div>
+
+              <div class="vs-form-group">
+                <label class="vs-form-label" for="bk-time">Time</label>
+                <div class="vs-input-wrapper">
+                  <span class="vs-input-icon">⏰</span>
+                  <input type="time" id="bk-time" class="vs-input" />
+                </div>
+              </div>
+
+              <div class="vs-form-group">
+                <label class="vs-form-label" for="bk-passengers">Passengers</label>
+                <div class="vs-input-wrapper">
+                  <span class="vs-input-icon">👥</span>
+                  <select id="bk-passengers" class="vs-input vs-select">
+                    <option value="1">1 Person</option>
+                    <option value="2">2 Persons</option>
+                    <option value="3">3 Persons</option>
+                    <option value="4" selected>4 Persons</option>
+                    <option value="6">6 Persons (SUV)</option>
+                    <option value="12">12+ (Tempo)</option>
+                  </select>
+                  <span class="vs-select-arrow">▼</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 4: Vehicle Selection Grid -->
+          <div class="vs-booking-card vs-reveal" style="padding: 28px;">
+            <h3 style="font-size: 1.15rem; font-weight: 800; margin-bottom: 8px; display: flex; align-items: center; gap: 10px;">
+              <span style="background: var(--vs-primary); color: #fff; width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.8rem;">3</span>
+              Select Vehicle Type
+            </h3>
+            <p style="font-size: 0.88rem; color: var(--vs-text-muted); margin-bottom: 20px;">
+              Prices recalculate automatically in real time based on your selected route distance.
+            </p>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px;">
+              
+              <!-- Bike -->
+              <div class="vs-vehicle-card js-booking-vehicle" data-vehicle="bike" style="padding: 16px; cursor: pointer;">
+                <div class="vs-vehicle-img-wrap" style="height: 80px;">
+                  <img src="images/bikes/bike.svg" alt="Bike" style="max-height: 60px;" />
+                </div>
+                <div style="font-weight: 800; font-size: 1rem; color: var(--vs-text);">Bike Taxi</div>
+                <div style="font-size: 0.78rem; color: var(--vs-text-muted);">1 Seat · Fast Traffic</div>
+                <div style="font-size: 1.15rem; font-weight: 800; color: var(--vs-primary); margin-top: 6px;">
+                  <span class="js-card-price">₹164</span>
+                </div>
+              </div>
+
+              <!-- Auto -->
+              <div class="vs-vehicle-card js-booking-vehicle" data-vehicle="auto" style="padding: 16px; cursor: pointer;">
+                <div class="vs-vehicle-img-wrap" style="height: 80px;">
+                  <img src="images/autos/auto.svg" alt="Auto" style="max-height: 60px;" />
+                </div>
+                <div style="font-weight: 800; font-size: 1rem; color: var(--vs-text);">Auto Rickshaw</div>
+                <div style="font-size: 0.78rem; color: var(--vs-text-muted);">3 Seats · Local Metro</div>
+                <div style="font-size: 1.15rem; font-weight: 800; color: var(--vs-primary); margin-top: 6px;">
+                  <span class="js-card-price">₹220</span>
+                </div>
+              </div>
+
+              <!-- Mini -->
+              <div class="vs-vehicle-card js-booking-vehicle" data-vehicle="mini" style="padding: 16px; cursor: pointer;">
+                <div class="vs-vehicle-img-wrap" style="height: 80px;">
+                  <img src="images/cars/mini.svg" alt="Mini" style="max-height: 60px;" />
+                </div>
+                <div style="font-weight: 800; font-size: 1rem; color: var(--vs-text);">Mini Hatchback</div>
+                <div style="font-size: 0.78rem; color: var(--vs-text-muted);">4 Seats · AC Comfort</div>
+                <div style="font-size: 1.15rem; font-weight: 800; color: var(--vs-primary); margin-top: 6px;">
+                  <span class="js-card-price">₹291</span>
+                </div>
+              </div>
+
+              <!-- Sedan -->
+              <div class="vs-vehicle-card js-booking-vehicle is-selected" data-vehicle="sedan" style="padding: 16px; cursor: pointer;">
+                <div class="vs-vehicle-img-wrap" style="height: 80px;">
+                  <img src="images/cars/sedan.svg" alt="Sedan" style="max-height: 60px;" />
+                </div>
+                <div style="font-weight: 800; font-size: 1rem; color: var(--vs-text);">Prime Sedan</div>
+                <div style="font-size: 0.78rem; color: var(--vs-text-muted);">4 Seats · Large Boot</div>
+                <div style="font-size: 1.15rem; font-weight: 800; color: var(--vs-primary); margin-top: 6px;">
+                  <span class="js-card-price">₹362</span>
+                </div>
+              </div>
+
+              <!-- SUV -->
+              <div class="vs-vehicle-card js-booking-vehicle" data-vehicle="suv" style="padding: 16px; cursor: pointer;">
+                <div class="vs-vehicle-img-wrap" style="height: 80px;">
+                  <img src="images/cars/suv.svg" alt="SUV" style="max-height: 60px;" />
+                </div>
+                <div style="font-weight: 800; font-size: 1rem; color: var(--vs-text);">Prime SUV</div>
+                <div style="font-size: 0.78rem; color: var(--vs-text-muted);">6 Seats · Family / Groups</div>
+                <div style="font-size: 1.15rem; font-weight: 800; color: var(--vs-primary); margin-top: 6px;">
+                  <span class="js-card-price">₹490</span>
+                </div>
+              </div>
+
+              <!-- Luxury -->
+              <div class="vs-vehicle-card js-booking-vehicle" data-vehicle="luxury" style="padding: 16px; cursor: pointer;">
+                <div class="vs-vehicle-img-wrap" style="height: 80px;">
+                  <img src="images/cars/luxury.svg" alt="Luxury" style="max-height: 60px;" />
+                </div>
+                <div style="font-weight: 800; font-size: 1rem; color: var(--vs-text);">Executive Luxury</div>
+                <div style="font-size: 0.78rem; color: var(--vs-text-muted);">4 Seats · VIP Chauffeur</div>
+                <div style="font-size: 1.15rem; font-weight: 800; color: var(--vs-primary); margin-top: 6px;">
+                  <span class="js-card-price">₹673</span>
+                </div>
+              </div>
+
+              <!-- Tempo -->
+              <div class="vs-vehicle-card js-booking-vehicle" data-vehicle="tempo" style="padding: 16px; cursor: pointer;">
+                <div class="vs-vehicle-img-wrap" style="height: 80px;">
+                  <img src="images/cars/tempo.svg" alt="Tempo" style="max-height: 60px;" />
+                </div>
+                <div style="font-weight: 800; font-size: 1rem; color: var(--vs-text);">Tempo Traveller</div>
+                <div style="font-size: 0.78rem; color: var(--vs-text-muted);">12-16 Seats · Group Tour</div>
+                <div style="font-size: 1.15rem; font-weight: 800; color: var(--vs-primary); margin-top: 6px;">
+                  <span class="js-card-price">₹947</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Steps 5 & 6 (Live Fare Summary & Confirmation) -->
+        <div style="position: sticky; top: 94px;">
+          <div class="vs-booking-card vs-reveal" style="padding: 28px; border: 2px solid var(--vs-border-strong);">
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px;">
+              <h3 style="font-size: 1.25rem; font-weight: 800; color: var(--vs-text);">Booking Summary</h3>
+              <span style="font-size: 0.75rem; font-weight: 800; background: var(--vs-secondary-light); color: var(--vs-secondary-dark); padding: 4px 10px; border-radius: var(--radius-full);">
+                GUARANTEED FARE
+              </span>
+            </div>
+
+            <!-- Route Details -->
+            <div style="border-bottom: 1px solid var(--vs-border); padding-bottom: 16px; margin-bottom: 16px; font-size: 0.9rem;">
+              <div style="margin-bottom: 10px;">
+                <span style="font-size: 0.75rem; text-transform: uppercase; color: var(--vs-text-muted); font-weight: 700;">Pickup:</span>
+                <div id="sum-pickup" style="font-weight: 700; color: var(--vs-text);">Connaught Place, New Delhi</div>
+              </div>
+              <div>
+                <span style="font-size: 0.75rem; text-transform: uppercase; color: var(--vs-text-muted); font-weight: 700;">Destination:</span>
+                <div id="sum-drop" style="font-weight: 700; color: var(--vs-text);">Indira Gandhi International Airport, T3</div>
+              </div>
+            </div>
+
+            <!-- Metrics -->
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; border-bottom: 1px solid var(--vs-border); padding-bottom: 16px; margin-bottom: 16px;">
+              <div>
+                <span style="font-size: 0.75rem; color: var(--vs-text-muted); font-weight: 600;">Selected Vehicle:</span>
+                <div id="sum-vehicle" style="font-weight: 800; color: var(--vs-text);">Prime Sedan</div>
+              </div>
+              <div>
+                <span style="font-size: 0.75rem; color: var(--vs-text-muted); font-weight: 600;">Est. Distance:</span>
+                <div id="sum-dist" style="font-weight: 800; color: var(--vs-text);">15.4 km</div>
+              </div>
+              <div>
+                <span style="font-size: 0.75rem; color: var(--vs-text-muted); font-weight: 600;">Est. Travel Time:</span>
+                <div id="sum-time" style="font-weight: 800; color: var(--vs-text);">28 mins</div>
+              </div>
+              <div>
+                <span style="font-size: 0.75rem; color: var(--vs-text-muted); font-weight: 600;">Trip Type:</span>
+                <div style="font-weight: 800; color: var(--vs-text);">Direct Point-to-Point</div>
+              </div>
+            </div>
+
+            <!-- Fare Breakdown -->
+            <div style="display: flex; flex-direction: column; gap: 8px; margin-bottom: 20px; font-size: 0.88rem; color: var(--vs-text-muted);">
+              <div style="display: flex; justify-content: space-between;">
+                <span>Base Ride Fare:</span>
+                <span id="sum-base-fare" style="font-weight: 700; color: var(--vs-text);">₹85</span>
+              </div>
+              <div style="display: flex; justify-content: space-between;">
+                <span>Distance Charges:</span>
+                <span id="sum-fare" style="font-weight: 700; color: var(--vs-text);">₹362</span>
+              </div>
+              <div style="display: flex; justify-content: space-between;">
+                <span>Goods & Service Tax (GST 5%):</span>
+                <span id="sum-gst" style="font-weight: 700; color: var(--vs-text);">₹18</span>
+              </div>
+              <div style="display: flex; justify-content: space-between; padding-top: 10px; border-top: 2px dashed var(--vs-border); font-size: 1.2rem; font-weight: 900; color: var(--vs-text);">
+                <span>Total Amount:</span>
+                <span id="sum-total" style="color: var(--vs-primary);">₹380</span>
+              </div>
+            </div>
+
+            <!-- Payment Options -->
+            <div style="margin-bottom: 24px;">
+              <span style="font-size: 0.78rem; font-weight: 700; text-transform: uppercase; color: var(--vs-text-muted); margin-bottom: 8px; display: block;">
+                Payment Method:
+              </span>
+              <div style="display: flex; gap: 8px;">
+                <label style="flex: 1; padding: 10px; border: 1px solid var(--vs-border); border-radius: var(--radius-md); font-size: 0.82rem; font-weight: 700; display: flex; align-items: center; gap: 6px; cursor: pointer;">
+                  <input type="radio" name="payment_mode" checked /> Cash / UPI to Driver
+                </label>
+                <label style="flex: 1; padding: 10px; border: 1px solid var(--vs-border); border-radius: var(--radius-md); font-size: 0.82rem; font-weight: 700; display: flex; align-items: center; gap: 6px; cursor: pointer;">
+                  <input type="radio" name="payment_mode" /> Online / Card
+                </label>
+              </div>
+            </div>
+
+            <!-- Confirm Booking Button -->
+            <button type="button" id="bk-confirm-btn" class="vs-btn vs-btn-primary vs-btn-block" style="padding: 14px; font-size: 1.05rem;">
+              Confirm Booking ➔
+            </button>
+
+            <div style="display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 14px; font-size: 0.78rem; color: var(--vs-text-muted);">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--vs-secondary)" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+              Free cancellation up to 5 mins before driver arrival
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- Modern Booking Success Modal -->
+  <div id="booking-success-modal" class="vs-modal-backdrop" role="dialog" aria-modal="true">
+    <div class="vs-modal">
+      <button type="button" class="vs-modal-close js-modal-close" aria-label="Close Modal">✕</button>
+
+      <div class="vs-modal-icon-badge">
+        ✓
+      </div>
+
+      <div style="text-align: center; margin-bottom: 16px;">
+        <h3 style="font-size: 1.45rem; font-weight: 900; color: var(--vs-text); margin-bottom: 6px;">
+          Your Vahan Setu Ride Has Been Booked Successfully!
+        </h3>
+        <p style="color: var(--vs-text-muted); font-size: 0.95rem;">
+          Booking ID: <strong class="js-modal-booking-id" style="color: var(--vs-primary); font-family: 'Space Grotesk', monospace;">VS-2026-00000</strong>
+        </p>
+      </div>
+
+      <!-- Details Container populated via JS -->
+      <div class="js-modal-details"></div>
+
+      <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 20px;">
+        <button type="button" class="vs-btn vs-btn-primary vs-btn-block js-modal-track-btn" style="padding: 12px;">
+          Track Vehicle Live ➔
+        </button>
+        <button type="button" class="vs-btn vs-btn-secondary vs-btn-block js-modal-close" style="padding: 12px;">
+          Done
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="vs-footer">
+    <div class="vs-container">
+      <div class="vs-footer-bottom">
+        <div>© 2026 Vahan Setu Technologies Ltd. All rights reserved. Connecting India, One Journey at a Time.</div>
+        <div>Contact: Vikas Yogi (+91 9461695205)</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

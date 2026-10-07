@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 210 110" fill="none">
+  <defs>
+    <linearGradient id="truckCargo" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#EA580C" />
+      <stop offset="100%" stop-color="#C2410C" />
+    </linearGradient>
+    <linearGradient id="truckCab" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E293B" />
+      <stop offset="100%" stop-color="#0F172A" />
+    </linearGradient>
+  </defs>
+  <ellipse cx="105" cy="98" rx="100" ry="7" fill="#000000" opacity="0.18" />
+  <!-- Dual rear wheels & front wheel -->
+  <circle cx="38" cy="82" r="17" fill="#0F172A" />
+  <circle cx="38" cy="82" r="9" fill="#64748B" />
+  <circle cx="74" cy="82" r="17" fill="#0F172A" />
+  <circle cx="74" cy="82" r="9" fill="#64748B" />
+  <circle cx="170" cy="82" r="17" fill="#0F172A" />
+  <circle cx="170" cy="82" r="9" fill="#64748B" />
+  <!-- Cargo Container Box (14ft) -->
+  <rect x="14" y="24" width="112" height="56" rx="3" fill="url(#truckCargo)" stroke="#9A3412" stroke-width="2" />
+  <!-- Corrugated vertical ribs -->
+  <line x1="32" y1="26" x2="32" y2="78" stroke="#FF8A4C" stroke-width="2" />
+  <line x1="52" y1="26" x2="52" y2="78" stroke="#FF8A4C" stroke-width="2" />
+  <line x1="72" y1="26" x2="72" y2="78" stroke="#FF8A4C" stroke-width="2" />
+  <line x1="92" y1="26" x2="92" y2="78" stroke="#FF8A4C" stroke-width="2" />
+  <line x1="112" y1="26" x2="112" y2="78" stroke="#FF8A4C" stroke-width="2" />
+  <text x="70" y="48" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-weight="900" font-size="9" fill="#FFFFFF" letter-spacing="1">VAHAN SETU</text>
+  <text x="70" y="60" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="7" fill="#FEF08A" letter-spacing="1">LOGISTICS</text>
+  <!-- Driver Cab -->
+  <path d="M128 80 L128 26 C 128 22, 134 18, 142 18 L176 18 C 184 18, 190 24, 194 36 L202 58 C 204 62, 204 74, 202 80 L188 80 L152 80 Z" fill="url(#truckCab)" />
+  <!-- Windshield -->
+  <path d="M144 24 L176 24 C 182 24, 186 28, 190 38 L194 48 L144 48 Z" fill="#E0F2FE" opacity="0.85" />
+  <!-- Cab Door & Handle -->
+  <rect x="148" y="58" width="12" height="3" rx="1.5" fill="#94A3B8" />
+  <!-- Massive Chrome Grille & Headlight -->
+  <rect x="194" y="56" width="6" height="18" fill="#CBD5E1" />
+  <path d="M198 64 L204 65 L202 72 L196 72 Z" fill="#FEF08A" />
+  <!-- Exhaust Stack -->
+  <rect x="130" y="10" width="4" height="16" rx="2" fill="#64748B" />
+</svg>

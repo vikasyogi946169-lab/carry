@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Outstation Cabs & Intercity Travel — Vahan Setu | One-Way & Round Trips Across India</title>
+  <meta name="description" content="Book intercity outstation cabs across India. Reliable one-way drops, round trips, verified highway chauffeurs, and transparent all-inclusive toll pricing." />
+  <link rel="icon" type="image/svg+xml" href="images/logo/favicon.svg" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- Sticky Navbar -->
+  <header class="vs-navbar">
+    <div class="vs-container-wide">
+      <div class="vs-nav-wrap">
+        <a href="index.html" class="vs-brand" aria-label="Vahan Setu Home">
+          <img src="images/logo/vahan-setu-logo.svg" alt="Vahan Setu Logo" class="vs-brand-logo-img" />
+        </a>
+
+        <nav aria-label="Primary Navigation">
+          <ul class="vs-nav-menu">
+            <li><a href="index.html" class="vs-nav-link">Home</a></li>
+            <li><a href="booking.html" class="vs-nav-link">Book Ride</a></li>
+            <li><a href="services.html" class="vs-nav-link">Services</a></li>
+            <li><a href="vehicles.html" class="vs-nav-link">Vehicles</a></li>
+            <li><a href="outstation.html" class="vs-nav-link is-active">Outstation</a></li>
+            <li><a href="logistics.html" class="vs-nav-link">Logistics</a></li>
+            <li><a href="tracking.html" class="vs-nav-link">Track Vehicle</a></li>
+            <li><a href="location.html" class="vs-nav-link">Location</a></li>
+            <li><a href="about.html" class="vs-nav-link">About</a></li>
+            <li><a href="contact.html" class="vs-nav-link">Contact</a></li>
+          </ul>
+        </nav>
+
+        <div class="vs-nav-actions">
+          <button type="button" class="vs-theme-btn js-theme-toggle" aria-label="Toggle Dark/Light Mode">
+            <span class="js-theme-icon"></span>
+          </button>
+          <div class="js-nav-auth" style="display:flex; align-items:center; gap:8px;">
+            <a href="login.html" class="vs-btn vs-btn-secondary" style="padding: 8px 16px;">Login</a>
+          </div>
+          <a href="booking.html" class="vs-btn vs-btn-primary">Book Now</a>
+          <button type="button" class="vs-mobile-toggle" aria-label="Open Navigation Menu">
+            <div class="vs-hamburger"><span></span><span></span><span></span></div>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <aside class="vs-mobile-drawer">
+    <ul class="vs-mobile-menu">
+      <li><a href="index.html">Home <span>➔</span></a></li>
+      <li><a href="booking.html">Book Ride <span>➔</span></a></li>
+      <li><a href="services.html">Services <span>➔</span></a></li>
+      <li><a href="vehicles.html">Vehicles <span>➔</span></a></li>
+      <li><a href="outstation.html" class="is-active">Outstation Travel <span>➔</span></a></li>
+      <li><a href="logistics.html">Goods & Logistics <span>➔</span></a></li>
+      <li><a href="driver.html">Driver Partner Registration <span>➔</span></a></li>
+      <li><a href="tracking.html">Live Vehicle Tracking <span>➔</span></a></li>
+      <li><a href="location.html">India Transit Map <span>➔</span></a></li>
+      <li><a href="about.html">About Vahan Setu <span>➔</span></a></li>
+      <li><a href="contact.html">Contact Us (Vikas Yogi) <span>➔</span></a></li>
+    </ul>
+  </aside>
+
+  <!-- Main Outstation Content -->
+  <main class="vs-section" style="padding-top: 40px;">
+    <div class="vs-container">
+      
+      <!-- Page Header -->
+      <div style="text-align: center; max-width: 720px; margin: 0 auto 36px;" class="vs-reveal">
+        <span style="font-size: 0.85rem; font-weight: 800; color: var(--vs-primary); letter-spacing: 1.5px; text-transform: uppercase;">
+          Intercity Highway Transit
+        </span>
+        <h1 style="font-size: clamp(2rem, 3.5vw, 2.8rem); font-weight: 900; color: var(--vs-text); margin-top: 6px;">
+          Seamless Outstation Travel Across India
+        </h1>
+        <p style="color: var(--vs-text-muted); font-size: 1.05rem;">
+          Pay only one-way for drops, or book multi-day round trips. All tolls, state road permits, and fuel included with zero surprise charges.
+        </p>
+      </div>
+
+      <!-- Outstation Booking Card -->
+      <div class="vs-booking-card vs-reveal" style="max-width: 960px; margin: 0 auto 60px; padding: 36px;">
+        
+        <!-- Toggle: One Way vs Round Trip -->
+        <div style="display: flex; justify-content: center; margin-bottom: 28px;">
+          <div style="display: inline-flex; background: var(--vs-surface-alt); padding: 4px; border-radius: var(--radius-md); border: 1px solid var(--vs-border);">
+            <button type="button" id="tab-one-way" class="vs-ride-tab is-active" style="padding: 10px 24px;">One Way</button>
+            <button type="button" id="tab-round-trip" class="vs-ride-tab" style="padding: 10px 24px;">Round Trip</button>
+          </div>
+        </div>
+
+        <!-- Outstation Fields -->
+        <form id="outstation-form">
+          <div style="display: grid; grid-template-columns: 1.2fr 1.2fr 1fr 1fr; gap: 16px; margin-bottom: 20px;">
+            <div class="vs-form-group">
+              <label class="vs-form-label" for="ost-from">
+                <span style="color:var(--vs-secondary);">●</span> From City
+              </label>
+              <div class="vs-input-wrapper">
+                <span class="vs-input-icon">📍</span>
+                <input type="text" id="ost-from" class="vs-input" value="Delhi NCR" required />
+              </div>
+            </div>
+
+            <div class="vs-form-group">
+              <label class="vs-form-label" for="ost-to">
+                <span style="color:var(--vs-primary);">■</span> To Destination
+              </label>
+              <div class="vs-input-wrapper">
+                <span class="vs-input-icon">🏁</span>
+                <input type="text" id="ost-to" class="vs-input" value="Jaipur, Rajasthan" required />
+              </div>
+            </div>
+
+            <div class="vs-form-group">
+              <label class="vs-form-label" for="ost-depart-date">Departure Date</label>
+              <div class="vs-input-wrapper">
+                <span class="vs-input-icon">📅</span>
+                <input type="date" id="ost-depart-date" class="vs-input" required />
+              </div>
+            </div>
+
+            <div class="vs-form-group" id="group-return-date" style="opacity: 0.45; pointer-events: none;">
+              <label class="vs-form-label" for="ost-return-date">Return Date</label>
+              <div class="vs-input-wrapper">
+                <span class="vs-input-icon">📅</span>
+                <input type="date" id="ost-return-date" class="vs-input" disabled />
+              </div>
+            </div>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 24px;">
+            <div class="vs-form-group">
+              <label class="vs-form-label" for="ost-vehicle">Vehicle Preferred</label>
+              <div class="vs-input-wrapper">
+                <span class="vs-input-icon">🚗</span>
+                <select id="ost-vehicle" class="vs-input vs-select">
+                  <option value="sedan" selected>Prime Sedan (Dzire / Etios) - 4 Seats</option>
+                  <option value="suv">Prime SUV (Ertiga / Innova) - 6-7 Seats</option>
+                  <option value="luxury">Executive Luxury (Camry / Mercedes) - 4 Seats</option>
+                  <option value="tempo">Tempo Traveller (Maharaja) - 12-16 Seats</option>
+                </select>
+                <span class="vs-select-arrow">▼</span>
+              </div>
+            </div>
+
+            <div class="vs-form-group">
+              <label class="vs-form-label" for="ost-passengers">Number of Passengers</label>
+              <div class="vs-input-wrapper">
+                <span class="vs-input-icon">👥</span>
+                <select id="ost-passengers" class="vs-input vs-select">
+                  <option value="1">1 Passenger</option>
+                  <option value="2">2 Passengers</option>
+                  <option value="3">3 Passengers</option>
+                  <option value="4" selected>4 Passengers</option>
+                  <option value="6">6 Passengers</option>
+                  <option value="12">12+ Group</option>
+                </select>
+                <span class="vs-select-arrow">▼</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Live Fare Preview -->
+          <div style="background: var(--vs-surface-alt); border-radius: var(--radius-lg); padding: 20px 24px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; margin-bottom: 24px;">
+            <div>
+              <span style="font-size: 0.8rem; font-weight: 700; color: var(--vs-text-muted); text-transform: uppercase;">
+                Estimated Highway Distance & Fare:
+              </span>
+              <div style="display: flex; gap: 24px; align-items: baseline; margin-top: 4px;">
+                <span id="ost-dist-display" style="font-size: 1.3rem; font-weight: 800; color: var(--vs-text);">275 km</span>
+                <span style="color: var(--vs-text-muted);">|</span>
+                <span id="ost-fare-display" style="font-size: 1.6rem; font-weight: 900; color: var(--vs-primary);">₹4,950</span>
+                <span style="font-size: 0.85rem; color: var(--vs-text-muted);">(Tolls & Driver Allowance Included)</span>
+              </div>
+            </div>
+
+            <button type="submit" class="vs-btn vs-btn-primary" style="padding: 14px 32px; font-size: 1rem;">
+              Book Outstation Cab ➔
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Popular Outstation Routes Across India -->
+      <div class="vs-reveal">
+        <div style="text-align: center; margin-bottom: 32px;">
+          <span style="font-size: 0.82rem; font-weight: 800; color: var(--vs-primary); letter-spacing: 1.5px; text-transform: uppercase;">
+            Most Traveled Highway Corridors
+          </span>
+          <h2 style="font-size: 1.8rem; font-weight: 800; color: var(--vs-text); margin-top: 4px;">
+            Popular Routes Across India
+          </h2>
+        </div>
+
+        <div class="vs-routes-grid">
+          
+          <!-- Route 1: Delhi to Agra -->
+          <div class="vs-route-card">
+            <div>
+              <div class="vs-route-path">
+                <span class="vs-route-city">Delhi NCR</span>
+                <span class="vs-route-arrow">➔</span>
+                <span class="vs-route-city">Agra (Taj City)</span>
+              </div>
+              <div class="vs-route-meta">
+                <span>🛣️ 230 km (Yamuna Expressway)</span>
+                <span>⏱️ ~3.5 hrs</span>
+              </div>
+              <p style="font-size: 0.85rem; color: var(--vs-text-muted); margin-bottom: 16px;">
+                Fastest expressway highway route. Doorstep hotel drop and monument tour options.
+              </p>
+            </div>
+            <div style="display: flex; align-items: center; justify-content: space-between;">
+              <div class="vs-route-price">Starts <span>₹3,850</span></div>
+              <a href="booking.html?pickup=Delhi&drop=Agra&vehicle=sedan" class="vs-btn vs-btn-secondary" style="padding: 8px 16px; font-size: 0.85rem;">Book Route</a>
+            </div>
+          </div>
+
+          <!-- Route 2: Mumbai to Pune -->
+          <div class="vs-route-card">
+            <div>
+              <div class="vs-route-path">
+                <span class="vs-route-city">Mumbai</span>
+                <span class="vs-route-arrow">➔</span>
+                <span class="vs-route-city">Pune</span>
+              </div>
+              <div class="vs-route-meta">
+                <span>🛣️ 150 km (Mumbai-Pune Exp)</span>
+                <span>⏱️ ~2.5 hrs</span>
+              </div>
+              <p style="font-size: 0.85rem; color: var(--vs-text-muted); margin-bottom: 16px;">
+                Scenic ghats transit. Regular shared and private cab options available round the clock.
+              </p>
+            </div>
+            <div style="display: flex; align-items: center; justify-content: space-between;">
+              <div class="vs-route-price">Starts <span>₹2,450</span></div>
+              <a href="booking.html?pickup=Mumbai&drop=Pune&vehicle=sedan" class="vs-btn vs-btn-secondary" style="padding: 8px 16px; font-size: 0.85rem;">Book Route</a>
+            </div>
+          </div>
+
+          <!-- Route 3: Bengaluru to Mysuru -->
+          <div class="vs-route-card">
+            <div>
+              <div class="vs-route-path">
+                <span class="vs-route-city">Bengaluru</span>
+                <span class="vs-route-arrow">➔</span>
+                <span class="vs-route-city">Mysuru</span>
+              </div>
+              <div class="vs-route-meta">
+                <span>🛣️ 145 km (10-Lane Exp)</span>
+                <span>⏱️ ~1.8 hrs</span>
+              </div>
+              <p style="font-size: 0.85rem; color: var(--vs-text-muted); margin-bottom: 16px;">
+                Direct 10-lane expressway route with scenic stopovers and airport connections.
+              </p>
+            </div>
+            <div style="display: flex; align-items: center; justify-content: space-between;">
+              <div class="vs-route-price">Starts <span>₹2,600</span></div>
+              <a href="booking.html?pickup=Bengaluru&drop=Mysuru&vehicle=sedan" class="vs-btn vs-btn-secondary" style="padding: 8px 16px; font-size: 0.85rem;">Book Route</a>
+            </div>
+          </div>
+
+          <!-- Route 4: Jaipur to Delhi -->
+          <div class="vs-route-card">
+            <div>
+              <div class="vs-route-path">
+                <span class="vs-route-city">Jaipur</span>
+                <span class="vs-route-arrow">➔</span>
+                <span class="vs-route-city">Delhi IGI Airport</span>
+              </div>
+              <div class="vs-route-meta">
+                <span>🛣️ 275 km (NH-48)</span>
+                <span>⏱️ ~4.5 hrs</span>
+              </div>
+              <p style="font-size: 0.85rem; color: var(--vs-text-muted); margin-bottom: 16px;">
+                Popular corporate and tourism corridor. Dedicated drivers trained on night highway safety.
+              </p>
+            </div>
+            <div style="display: flex; align-items: center; justify-content: space-between;">
+              <div class="vs-route-price">Starts <span>₹4,950</span></div>
+              <a href="booking.html?pickup=Jaipur&drop=Delhi&vehicle=sedan" class="vs-btn vs-btn-secondary" style="padding: 8px 16px; font-size: 0.85rem;">Book Route</a>
+            </div>
+          </div>
+
+          <!-- Route 5: Chennai to Puducherry -->
+          <div class="vs-route-card">
+            <div>
+              <div class="vs-route-path">
+                <span class="vs-route-city">Chennai</span>
+                <span class="vs-route-arrow">➔</span>
+                <span class="vs-route-city">Puducherry</span>
+              </div>
+              <div class="vs-route-meta">
+                <span>🛣️ 150 km (East Coast Road)</span>
+                <span>⏱️ ~2.8 hrs</span>
+              </div>
+              <p style="font-size: 0.85rem; color: var(--vs-text-muted); margin-bottom: 16px;">
+                Breathtaking coastal drive along the Bay of Bengal with weekend getaway discounts.
+              </p>
+            </div>
+            <div style="display: flex; align-items: center; justify-content: space-between;">
+              <div class="vs-route-price">Starts <span>₹2,800</span></div>
+              <a href="booking.html?pickup=Chennai&drop=Puducherry&vehicle=sedan" class="vs-btn vs-btn-secondary" style="padding: 8px 16px; font-size: 0.85rem;">Book Route</a>
+            </div>
+          </div>
+
+          <!-- Route 6: Ahmedabad to Surat -->
+          <div class="vs-route-card">
+            <div>
+              <div class="vs-route-path">
+                <span class="vs-route-city">Ahmedabad</span>
+                <span class="vs-route-arrow">➔</span>
+                <span class="vs-route-city">Surat (Diamond City)</span>
+              </div>
+              <div class="vs-route-meta">
+                <span>🛣️ 265 km (NE-1 / NH-48)</span>
+                <span>⏱️ ~4.0 hrs</span>
+              </div>
+              <p style="font-size: 0.85rem; color: var(--vs-text-muted); margin-bottom: 16px;">
+                Gujarat commercial spine. Smooth multi-lane road travel with sanitised rest stops.
+              </p>
+            </div>
+            <div style="display: flex; align-items: center; justify-content: space-between;">
+              <div class="vs-route-price">Starts <span>₹4,300</span></div>
+              <a href="booking.html?pickup=Ahmedabad&drop=Surat&vehicle=sedan" class="vs-btn vs-btn-secondary" style="padding: 8px 16px; font-size: 0.85rem;">Book Route</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Interactive JavaScript for Outstation Form -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const tabOneWay = document.getElementById('tab-one-way');
+      const tabRoundTrip = document.getElementById('tab-round-trip');
+      const returnGroup = document.getElementById('group-return-date');
+      const returnInput = document.getElementById('ost-return-date');
+      const fromInput = document.getElementById('ost-from');
+      const toInput = document.getElementById('ost-to');
+      const vehicleSelect = document.getElementById('ost-vehicle');
+      const distDisplay = document.getElementById('ost-dist-display');
+      const fareDisplay = document.getElementById('ost-fare-display');
+      const form = document.getElementById('outstation-form');
+
+      let isRoundTrip = false;
+
+      tabOneWay.addEventListener('click', () => {
+        isRoundTrip = false;
+        tabOneWay.classList.add('is-active');
+        tabRoundTrip.classList.remove('is-active');
+        returnGroup.style.opacity = '0.45';
+        returnGroup.style.pointerEvents = 'none';
+        returnInput.disabled = true;
+        recalc();
+      });
+
+      tabRoundTrip.addEventListener('click', () => {
+        isRoundTrip = true;
+        tabRoundTrip.classList.add('is-active');
+        tabOneWay.classList.remove('is-active');
+        returnGroup.style.opacity = '1';
+        returnGroup.style.pointerEvents = 'auto';
+        returnInput.disabled = false;
+        recalc();
+      });
+
+      function recalc() {
+        const from = fromInput.value;
+        const to = toInput.value;
+        const v = vehicleSelect.value;
+        const dist = calculateEstimatedDistance(from, to);
+        const effectiveDist = isRoundTrip ? dist * 2 : dist;
+        const est = calculateFare(v, effectiveDist);
+
+        if (distDisplay) distDisplay.textContent = `${effectiveDist} km`;
+        if (fareDisplay) fareDisplay.textContent = `₹${est.fare + (isRoundTrip ? 500 : 300)}`;
+      }
+
+      fromInput.addEventListener('input', recalc);
+      toInput.addEventListener('input', recalc);
+      vehicleSelect.addEventListener('change', recalc);
+      recalc();
+
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const from = fromInput.value;
+        const to = toInput.value;
+        const v = vehicleSelect.value;
+        window.location.href = `booking.html?pickup=${encodeURIComponent(from)}&drop=${encodeURIComponent(to)}&vehicle=${v}`;
+      });
+    });
+  </script>
+
+  <!-- Footer -->
+  <footer class="vs-footer">
+    <div class="vs-container">
+      <div class="vs-footer-bottom">
+        <div>© 2026 Vahan Setu Technologies Ltd. All rights reserved. Connecting India, One Journey at a Time.</div>
+        <div>Contact: Vikas Yogi (+91 9461695205)</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

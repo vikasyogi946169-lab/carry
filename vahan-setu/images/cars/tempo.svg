@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 100" fill="none">
+  <defs>
+    <linearGradient id="tempoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F8FAFC" />
+      <stop offset="100%" stop-color="#E2E8F0" />
+    </linearGradient>
+  </defs>
+  <ellipse cx="100" cy="90" rx="94" ry="7" fill="#000000" opacity="0.16" />
+  <!-- Wheels -->
+  <circle cx="44" cy="76" r="16" fill="#1E293B" />
+  <circle cx="44" cy="76" r="9" fill="#94A3B8" />
+  <circle cx="44" cy="76" r="4" fill="#0F172A" />
+  <circle cx="156" cy="76" r="16" fill="#1E293B" />
+  <circle cx="156" cy="76" r="9" fill="#94A3B8" />
+  <circle cx="156" cy="76" r="4" fill="#0F172A" />
+  <!-- High Roof Van Body -->
+  <path d="M16 72 L16 34 C 16 26, 22 22, 30 22 L162 22 C 168 22, 172 26, 176 34 L186 52 C 188 56, 188 62, 186 68 L180 72 L168 72 L144 72 L60 72 L32 72 Z" fill="url(#tempoGrad)" stroke="#CBD5E1" stroke-width="1.5" />
+  <!-- Touring Graphic Stripes: Saffron & Green Indian transport accent -->
+  <path d="M16 54 L184 54" stroke="#FF7A00" stroke-width="3" />
+  <path d="M16 58 L184 58" stroke="#00D2A0" stroke-width="2" />
+  <!-- Wide Passenger Windows Array -->
+  <rect x="24" y="30" width="22" height="18" rx="2" fill="#38BDF8" opacity="0.45" />
+  <rect x="52" y="30" width="24" height="18" rx="2" fill="#38BDF8" opacity="0.45" />
+  <rect x="82" y="30" width="24" height="18" rx="2" fill="#38BDF8" opacity="0.45" />
+  <rect x="112" y="30" width="24" height="18" rx="2" fill="#38BDF8" opacity="0.45" />
+  <!-- Driver Windshield -->
+  <path d="M142 30 L168 30 C 172 30, 174 34, 176 40 L180 48 L142 48 Z" fill="#E0F2FE" opacity="0.8" />
+  <!-- Front Headlight -->
+  <path d="M182 58 L187 60 L185 66 L180 66 Z" fill="#FEF08A" />
+  <text x="14" y="16" font-family="sans-serif" font-weight="bold" font-size="7" fill="#64748B">12 - 17 SEATER</text>
+</svg>

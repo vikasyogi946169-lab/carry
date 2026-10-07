@@ -1,0 +1,1882 @@
+/* ==========================================================================
+   VAHAN SETU - MODERN INDIAN TRANSPORT PLATFORM
+   Design System, CSS Variables, Typography & Responsive Framework
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@500;700&display=swap');
+
+:root {
+  /* Brand Core Colors */
+  --vs-primary: #FF7A00;
+  --vs-primary-hover: #E06700;
+  --vs-primary-light: rgba(255, 122, 0, 0.12);
+  --vs-secondary: #00D2A0;
+  --vs-secondary-dark: #00A87D;
+  --vs-secondary-light: rgba(0, 210, 160, 0.12);
+  --vs-accent: #38BDF8;
+
+  /* Neutrals & Surfaces (Light Mode default) */
+  --vs-bg: #F8FAFC;
+  --vs-surface: #FFFFFF;
+  --vs-surface-alt: #F1F5F9;
+  --vs-surface-hover: #F8FAFC;
+  --vs-border: #E2E8F0;
+  --vs-border-strong: #CBD5E1;
+  --vs-text: #0F172A;
+  --vs-text-muted: #64748B;
+  --vs-text-light: #94A3B8;
+  --vs-dark: #0B132B;
+  --vs-dark-surface: #1C2541;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.06), 0 1px 2px rgba(15, 23, 42, 0.04);
+  --shadow-md: 0 4px 12px -2px rgba(15, 23, 42, 0.08), 0 2px 6px -1px rgba(15, 23, 42, 0.05);
+  --shadow-lg: 0 12px 28px -4px rgba(15, 23, 42, 0.12), 0 6px 14px -2px rgba(15, 23, 42, 0.06);
+  --shadow-xl: 0 20px 38px -6px rgba(15, 23, 42, 0.16), 0 10px 20px -3px rgba(15, 23, 42, 0.08);
+  --shadow-glow: 0 0 24px rgba(255, 122, 0, 0.35);
+
+  /* Transitions */
+  --transition-fast: 160ms cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-base: 240ms cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-smooth: 380ms cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Border Radii */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-full: 9999px;
+}
+
+/* Dark Theme Variables */
+[data-theme="dark"] {
+  --vs-bg: #070D1E;
+  --vs-surface: #0E172E;
+  --vs-surface-alt: #16203D;
+  --vs-surface-hover: #1A2649;
+  --vs-border: #1F2E52;
+  --vs-border-strong: #2B3D6B;
+  --vs-text: #F1F5F9;
+  --vs-text-muted: #94A3B8;
+  --vs-text-light: #64748B;
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.35);
+  --shadow-md: 0 4px 14px rgba(0, 0, 0, 0.45);
+  --shadow-lg: 0 12px 30px rgba(0, 0, 0, 0.6);
+  --shadow-xl: 0 20px 42px rgba(0, 0, 0, 0.7);
+}
+
+/* Base Reset & Typography */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: var(--vs-bg);
+  color: var(--vs-text);
+  line-height: 1.55;
+  overflow-x: hidden;
+  transition: background-color var(--transition-base), color var(--transition-base);
+}
+
+img, svg {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+button, input, select, textarea {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* Global Container */
+.vs-container {
+  width: 100%;
+  max-width: 1240px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.vs-container-wide {
+  width: 100%;
+  max-width: 1380px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+/* ==========================================================================
+   NAVBAR (Sticky, Responsive, Drawer)
+   ========================================================================== */
+
+.vs-navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--vs-border);
+  transition: all var(--transition-base);
+}
+
+[data-theme="dark"] .vs-navbar {
+  background-color: rgba(14, 23, 46, 0.94);
+  border-bottom-color: var(--vs-border);
+}
+
+.vs-navbar.is-scrolled {
+  box-shadow: var(--shadow-md);
+  border-bottom-color: transparent;
+}
+
+.vs-nav-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 74px;
+}
+
+.vs-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  font-weight: 800;
+  flex-shrink: 0;
+  min-width: 170px;
+}
+
+.vs-brand-logo-img {
+  height: 46px;
+  width: auto;
+  transition: transform var(--transition-base);
+  display: block;
+  object-fit: contain;
+}
+
+/* Ensure Logo is 100% visible in dark mode via CSS content swap */
+[data-theme="dark"] .vs-brand-logo-img:not(.vs-logo-filtered) {
+  content: url('/images/logo/vahan-setu-logo-dark.svg');
+}
+
+.vs-brand:hover .vs-brand-logo-img {
+  transform: scale(1.03);
+}
+
+/* Nav Links List */
+.vs-nav-menu {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 6px;
+  flex-shrink: 1;
+}
+
+.vs-nav-link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 10px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--vs-text-muted);
+  border-radius: var(--radius-sm);
+  white-space: nowrap;
+  transition: color var(--transition-fast), background-color var(--transition-fast);
+}
+
+/* Pseudo-element for active indicator */
+.vs-nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 12px;
+  right: 12px;
+  height: 2.5px;
+  background: linear-gradient(90deg, var(--vs-primary), var(--vs-secondary));
+  border-radius: 2px;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform var(--transition-base);
+}
+
+.vs-nav-link:hover {
+  color: var(--vs-text);
+  background-color: var(--vs-surface-alt);
+}
+
+.vs-nav-link:hover::after,
+.vs-nav-link.is-active::after {
+  transform: scaleX(1);
+}
+
+.vs-nav-link.is-active {
+  color: var(--vs-primary);
+  font-weight: 700;
+}
+
+/* Navbar Right Actions */
+.vs-nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.vs-theme-btn {
+  background: var(--vs-surface-alt);
+  border: 1px solid var(--vs-border);
+  color: var(--vs-text);
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-full);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.vs-theme-btn:hover {
+  background: var(--vs-surface-hover);
+  color: var(--vs-primary);
+  transform: rotate(15deg);
+}
+
+.vs-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 20px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  border-radius: var(--radius-md);
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  overflow: hidden;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+/* Button Shimmer Effect with ::before */
+.vs-btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.35), transparent);
+  transform: skewX(-20deg);
+  transition: 0.6s;
+}
+
+.vs-btn-primary:hover::before {
+  left: 140%;
+}
+
+.vs-btn-primary {
+  background: linear-gradient(135deg, var(--vs-primary), #FF5500);
+  color: #FFFFFF;
+  box-shadow: 0 4px 14px rgba(255, 122, 0, 0.35);
+}
+
+.vs-btn-primary:hover {
+  background: linear-gradient(135deg, #FF8800, #FF6600);
+  box-shadow: 0 6px 20px rgba(255, 122, 0, 0.45);
+  transform: translateY(-2px);
+}
+
+.vs-btn-primary:active {
+  transform: translateY(0);
+}
+
+.vs-btn-secondary {
+  background: var(--vs-surface-alt);
+  color: var(--vs-text);
+  border-color: var(--vs-border);
+}
+
+.vs-btn-secondary:hover {
+  background: var(--vs-border);
+  color: var(--vs-text);
+  transform: translateY(-1px);
+}
+
+.vs-btn-outline {
+  background: transparent;
+  color: var(--vs-primary);
+  border-color: var(--vs-primary);
+}
+
+.vs-btn-outline:hover {
+  background: var(--vs-primary-light);
+  transform: translateY(-1px);
+}
+
+.vs-btn-teal {
+  background: linear-gradient(135deg, var(--vs-secondary), var(--vs-secondary-dark));
+  color: #FFFFFF;
+  box-shadow: 0 4px 14px rgba(0, 210, 160, 0.3);
+}
+
+.vs-btn-teal:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 210, 160, 0.45);
+}
+
+.vs-btn-block {
+  width: 100%;
+}
+
+/* Mobile Hamburger Toggle */
+.vs-mobile-toggle {
+  display: none;
+  background: none;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+  color: var(--vs-text);
+  border-radius: var(--radius-sm);
+}
+
+.vs-hamburger {
+  width: 24px;
+  height: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+}
+
+.vs-hamburger span {
+  display: block;
+  height: 2.5px;
+  width: 100%;
+  background: currentColor;
+  border-radius: 2px;
+  transition: all var(--transition-base);
+}
+
+.vs-mobile-toggle.is-open .vs-hamburger span:nth-child(1) {
+  transform: translateY(8.5px) rotate(45deg);
+}
+
+.vs-mobile-toggle.is-open .vs-hamburger span:nth-child(2) {
+  opacity: 0;
+}
+
+.vs-mobile-toggle.is-open .vs-hamburger span:nth-child(3) {
+  transform: translateY(-8.5px) rotate(-45deg);
+}
+
+/* Mobile Drawer */
+.vs-mobile-drawer {
+  position: fixed;
+  top: 74px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--vs-surface);
+  z-index: 999;
+  padding: 24px 20px;
+  transform: translateY(-100%);
+  opacity: 0;
+  visibility: hidden;
+  transition: all var(--transition-smooth);
+  overflow-y: auto;
+  border-bottom: 1px solid var(--vs-border);
+  box-shadow: var(--shadow-xl);
+}
+
+.vs-mobile-drawer.is-open {
+  transform: translateY(0);
+  opacity: 1;
+  visibility: visible;
+}
+
+.vs-mobile-menu {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.vs-mobile-menu a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--vs-text);
+  border-radius: var(--radius-md);
+  background: var(--vs-surface-alt);
+  transition: all var(--transition-fast);
+}
+
+.vs-mobile-menu a:hover,
+.vs-mobile-menu a.is-active {
+  background: var(--vs-primary-light);
+  color: var(--vs-primary);
+}
+
+.vs-mobile-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* ==========================================================================
+   HERO SECTION (High-Tech, Floating Vehicle Cards, India Corridor)
+   ========================================================================== */
+
+.vs-hero-section {
+  position: relative;
+  padding: 64px 0 96px;
+  background: linear-gradient(180deg, rgba(255, 122, 0, 0.04) 0%, transparent 70%);
+  overflow: hidden;
+}
+
+.vs-hero-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.vs-hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.vs-hero-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--vs-primary);
+  margin-bottom: 14px;
+}
+
+.vs-hero-kicker-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: var(--radius-full);
+  background: var(--vs-secondary);
+  animation: pulseRadar 2s infinite ease-in-out;
+}
+
+.vs-hero-title {
+  font-size: clamp(2.4rem, 4.5vw, 3.8rem);
+  font-weight: 900;
+  line-height: 1.12;
+  color: var(--vs-text);
+  letter-spacing: -0.025em;
+  margin-bottom: 20px;
+}
+
+.vs-hero-title .highlight {
+  background: linear-gradient(135deg, var(--vs-primary), #FF5500);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.vs-hero-subtitle {
+  font-size: clamp(1rem, 1.8vw, 1.2rem);
+  color: var(--vs-text-muted);
+  line-height: 1.6;
+  margin-bottom: 32px;
+  max-width: 560px;
+}
+
+.vs-hero-ctas {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+.vs-hero-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  padding-top: 24px;
+  border-top: 1px solid var(--vs-border);
+}
+
+.vs-stat-item h4 {
+  font-size: 1.7rem;
+  font-weight: 800;
+  color: var(--vs-text);
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.vs-stat-item p {
+  font-size: 0.85rem;
+  color: var(--vs-text-muted);
+  font-weight: 500;
+}
+
+/* Hero Visual / Floating Canvas */
+.vs-hero-visual {
+  position: relative;
+  z-index: 2;
+}
+
+.vs-hero-banner-card {
+  position: relative;
+  background: var(--vs-surface);
+  border: 1px solid var(--vs-border);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-xl);
+  transition: transform var(--transition-smooth);
+}
+
+.vs-hero-banner-card:hover {
+  transform: translateY(-4px);
+}
+
+.vs-hero-banner-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Animated Floating Badges on Hero */
+.vs-floating-card {
+  position: absolute;
+  background: var(--vs-surface);
+  border: 1px solid var(--vs-border);
+  border-radius: var(--radius-lg);
+  padding: 12px 18px;
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  z-index: 3;
+  backdrop-filter: blur(10px);
+  animation: floatMotion 4s ease-in-out infinite;
+}
+
+.vs-floating-card-1 {
+  top: -20px;
+  right: -20px;
+  animation-delay: 0s;
+}
+
+.vs-floating-card-2 {
+  bottom: -24px;
+  left: -20px;
+  animation-delay: 2s;
+}
+
+.vs-floating-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius-md);
+  background: var(--vs-primary-light);
+  color: var(--vs-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+}
+
+.vs-floating-card-2 .vs-floating-icon {
+  background: var(--vs-secondary-light);
+  color: var(--vs-secondary);
+}
+
+.vs-floating-info h5 {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--vs-text);
+}
+
+.vs-floating-info p {
+  font-size: 0.76rem;
+  color: var(--vs-text-muted);
+}
+
+/* ==========================================================================
+   PROMINENT RIDE BOOKING CARD
+   ========================================================================== */
+
+.vs-booking-card-wrapper {
+  margin-top: 24px;
+  position: relative;
+  z-index: 10;
+  margin-bottom: 60px;
+}
+
+.vs-booking-card {
+  background: var(--vs-surface);
+  border: 1px solid var(--vs-border);
+  border-radius: var(--radius-xl);
+  padding: 32px;
+  box-shadow: var(--shadow-xl);
+}
+
+.vs-booking-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.vs-booking-card-title {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--vs-text);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Service Type Selector inside card */
+.vs-ride-tabs {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--vs-surface-alt);
+  padding: 4px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--vs-border);
+}
+
+.vs-ride-tab {
+  background: none;
+  border: none;
+  padding: 8px 16px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--vs-text-muted);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.vs-ride-tab.is-active {
+  background: var(--vs-surface);
+  color: var(--vs-primary);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Booking Form Grid */
+.vs-booking-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1.2fr 0.9fr 0.9fr 1fr;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.vs-form-group {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.vs-form-label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--vs-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.vs-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.vs-input-icon {
+  position: absolute;
+  left: 14px;
+  color: var(--vs-primary);
+  pointer-events: none;
+  font-size: 1.1rem;
+}
+
+.vs-input {
+  width: 100%;
+  height: 48px;
+  padding: 10px 14px 10px 42px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--vs-text);
+  background: var(--vs-surface-alt);
+  border: 1.5px solid var(--vs-border);
+  border-radius: var(--radius-md);
+  transition: all var(--transition-fast);
+  outline: none;
+}
+
+.vs-input:focus {
+  border-color: var(--vs-primary);
+  background: var(--vs-surface);
+  box-shadow: 0 0 0 3px var(--vs-primary-light);
+}
+
+.vs-select {
+  appearance: none;
+  cursor: pointer;
+}
+
+.vs-select-arrow {
+  position: absolute;
+  right: 14px;
+  color: var(--vs-text-muted);
+  pointer-events: none;
+}
+
+/* Vehicle Selector Pills Grid inside card */
+.vs-vehicle-chips {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.vs-vehicle-chip {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  background: var(--vs-surface-alt);
+  border: 2px solid var(--vs-border);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.vs-vehicle-chip:hover {
+  border-color: var(--vs-primary);
+  background: var(--vs-surface);
+}
+
+.vs-vehicle-chip.is-selected {
+  border-color: var(--vs-primary);
+  background: var(--vs-primary-light);
+  box-shadow: var(--shadow-sm);
+}
+
+.vs-vehicle-chip img {
+  width: 36px;
+  height: auto;
+}
+
+.vs-vehicle-chip-info h6 {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--vs-text);
+}
+
+.vs-vehicle-chip-info span {
+  font-size: 0.75rem;
+  color: var(--vs-text-muted);
+}
+
+/* Booking Card Estimate & Action Bar */
+.vs-estimate-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 20px;
+  border-top: 1px solid var(--vs-border);
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.vs-estimate-metrics {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.vs-metric-pill {
+  display: flex;
+  flex-direction: column;
+}
+
+.vs-metric-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--vs-text-muted);
+  text-transform: uppercase;
+}
+
+.vs-metric-value {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--vs-text);
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.vs-metric-value.price {
+  color: var(--vs-primary);
+  font-size: 1.4rem;
+}
+
+.vs-estimate-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* ==========================================================================
+   SERVICES SECTION
+   ========================================================================== */
+
+.vs-section {
+  padding: 80px 0;
+}
+
+.vs-section-alt {
+  background-color: var(--vs-surface-alt);
+}
+
+.vs-section-header {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 52px;
+}
+
+.vs-section-kicker {
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--vs-primary);
+  margin-bottom: 8px;
+}
+
+.vs-section-title {
+  font-size: clamp(1.8rem, 3.2vw, 2.6rem);
+  font-weight: 800;
+  color: var(--vs-text);
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  margin-bottom: 14px;
+}
+
+.vs-section-desc {
+  font-size: 1.05rem;
+  color: var(--vs-text-muted);
+  line-height: 1.6;
+}
+
+/* Services Grid */
+.vs-services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 24px;
+}
+
+.vs-service-card {
+  position: relative;
+  background: var(--vs-surface);
+  border: 1px solid var(--vs-border);
+  border-radius: var(--radius-lg);
+  padding: 30px;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-base);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+/* Card Pseudo-element Top Line Accent on Hover */
+.vs-service-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--vs-primary), var(--vs-secondary));
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+}
+
+.vs-service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-xl);
+  border-color: var(--vs-border-strong);
+}
+
+.vs-service-card:hover::before {
+  opacity: 1;
+}
+
+.vs-service-icon-wrap {
+  width: 58px;
+  height: 58px;
+  border-radius: var(--radius-md);
+  background: var(--vs-surface-alt);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  transition: all var(--transition-fast);
+}
+
+.vs-service-card:hover .vs-service-icon-wrap {
+  background: var(--vs-primary-light);
+  color: var(--vs-primary);
+  transform: scale(1.08);
+}
+
+.vs-service-card h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--vs-text);
+  margin-bottom: 10px;
+}
+
+.vs-service-card p {
+  font-size: 0.92rem;
+  color: var(--vs-text-muted);
+  line-height: 1.55;
+  margin-bottom: 20px;
+  flex-grow: 1;
+}
+
+.vs-card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--vs-primary);
+  transition: gap var(--transition-fast);
+}
+
+.vs-service-card:hover .vs-card-link {
+  gap: 10px;
+}
+
+/* ==========================================================================
+   VEHICLE FLEET SECTION
+   ========================================================================== */
+
+.vs-fleet-filter-bar {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 40px;
+}
+
+.vs-filter-btn {
+  background: var(--vs-surface);
+  border: 1px solid var(--vs-border);
+  color: var(--vs-text-muted);
+  padding: 8px 18px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.vs-filter-btn:hover {
+  color: var(--vs-text);
+  border-color: var(--vs-border-strong);
+}
+
+.vs-filter-btn.is-active {
+  background: var(--vs-dark);
+  color: #FFFFFF;
+  border-color: var(--vs-dark);
+  box-shadow: var(--shadow-sm);
+}
+
+[data-theme="dark"] .vs-filter-btn.is-active {
+  background: var(--vs-primary);
+  border-color: var(--vs-primary);
+}
+
+.vs-fleet-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+  gap: 28px;
+}
+
+.vs-vehicle-card {
+  position: relative;
+  background: var(--vs-surface);
+  border: 2px solid var(--vs-border);
+  border-radius: var(--radius-xl);
+  padding: 24px;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-base);
+  display: flex;
+  flex-direction: column;
+}
+
+.vs-vehicle-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--vs-border-strong);
+}
+
+.vs-vehicle-card.is-selected {
+  border-color: var(--vs-primary);
+  background: linear-gradient(180deg, var(--vs-surface) 0%, rgba(255, 122, 0, 0.04) 100%);
+  box-shadow: 0 8px 24px rgba(255, 122, 0, 0.16);
+}
+
+.vs-vehicle-img-wrap {
+  width: 100%;
+  height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+  padding: 10px;
+  background: var(--vs-surface-alt);
+  border-radius: var(--radius-lg);
+}
+
+.vs-vehicle-img-wrap img {
+  max-height: 110px;
+  width: auto;
+  transition: transform var(--transition-base);
+}
+
+.vs-vehicle-card:hover .vs-vehicle-img-wrap img {
+  transform: scale(1.05);
+}
+
+.vs-vehicle-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.vs-vehicle-name {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--vs-text);
+}
+
+.vs-vehicle-capacity {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--vs-text-muted);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.vs-vehicle-price {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--vs-primary);
+  font-family: 'Space Grotesk', sans-serif;
+  margin-bottom: 12px;
+}
+
+.vs-vehicle-price span {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--vs-text-muted);
+}
+
+.vs-vehicle-features {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 20px;
+  flex-grow: 1;
+}
+
+.vs-vehicle-features li {
+  font-size: 0.84rem;
+  color: var(--vs-text-muted);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.vs-vehicle-features li svg {
+  color: var(--vs-secondary);
+  flex-shrink: 0;
+}
+
+/* ==========================================================================
+   POPULAR OUTSTATION ROUTES
+   ========================================================================== */
+
+.vs-routes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+}
+
+.vs-route-card {
+  background: var(--vs-surface);
+  border: 1px solid var(--vs-border);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-base);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.vs-route-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--vs-primary);
+}
+
+.vs-route-path {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.vs-route-city {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--vs-text);
+}
+
+.vs-route-arrow {
+  color: var(--vs-primary);
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.vs-route-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  color: var(--vs-text-muted);
+  padding: 12px 0;
+  border-top: 1px dashed var(--vs-border);
+  border-bottom: 1px dashed var(--vs-border);
+  margin-bottom: 16px;
+}
+
+.vs-route-price {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--vs-text);
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.vs-route-price span {
+  color: var(--vs-primary);
+}
+
+/* ==========================================================================
+   MAP / LOCATION PAGE
+   ========================================================================== */
+
+.vs-map-layout {
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+.vs-map-sidebar {
+  background: var(--vs-surface);
+  border: 1px solid var(--vs-border);
+  border-radius: var(--radius-xl);
+  padding: 28px;
+  box-shadow: var(--shadow-md);
+}
+
+.vs-map-display-card {
+  position: relative;
+  background: #0F172A;
+  border: 1px solid var(--vs-border);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-xl);
+  min-height: 600px;
+}
+
+.vs-map-display-card svg {
+  width: 100%;
+  height: 100%;
+  min-height: 600px;
+  object-fit: cover;
+}
+
+.vs-map-overlay-card {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  background: rgba(15, 23, 42, 0.88);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-lg);
+  padding: 18px 24px;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+/* ==========================================================================
+   LIVE TRACKING PAGE
+   ========================================================================== */
+
+.vs-tracking-layout {
+  display: grid;
+  grid-template-columns: 400px 1fr;
+  gap: 24px;
+}
+
+.vs-tracking-card {
+  background: var(--vs-surface);
+  border: 1px solid var(--vs-border);
+  border-radius: var(--radius-xl);
+  padding: 28px;
+  box-shadow: var(--shadow-lg);
+}
+
+.vs-tracking-status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  font-size: 0.82rem;
+  font-weight: 700;
+  background: var(--vs-secondary-light);
+  color: var(--vs-secondary-dark);
+}
+
+.vs-status-pulse {
+  width: 8px;
+  height: 8px;
+  border-radius: var(--radius-full);
+  background: currentColor;
+  animation: pulseRadar 1.5s infinite ease-in-out;
+}
+
+.vs-driver-box {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px;
+  background: var(--vs-surface-alt);
+  border-radius: var(--radius-lg);
+  margin: 18px 0;
+}
+
+.vs-driver-avatar {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-full);
+  background: var(--vs-dark);
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 1.2rem;
+}
+
+.vs-driver-info h4 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--vs-text);
+}
+
+.vs-driver-info p {
+  font-size: 0.82rem;
+  color: var(--vs-text-muted);
+}
+
+.vs-tracking-timeline {
+  list-style: none;
+  position: relative;
+  padding-left: 28px;
+  margin: 20px 0;
+}
+
+.vs-tracking-timeline::before {
+  content: '';
+  position: absolute;
+  top: 6px;
+  bottom: 6px;
+  left: 8px;
+  width: 2px;
+  background: var(--vs-border-strong);
+}
+
+.vs-timeline-step {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.vs-timeline-step::before {
+  content: '';
+  position: absolute;
+  left: -28px;
+  top: 4px;
+  width: 14px;
+  height: 14px;
+  border-radius: var(--radius-full);
+  background: var(--vs-surface);
+  border: 3px solid var(--vs-border-strong);
+}
+
+.vs-timeline-step.is-active::before {
+  border-color: var(--vs-primary);
+  background: var(--vs-primary);
+}
+
+.vs-timeline-step.is-complete::before {
+  border-color: var(--vs-secondary);
+  background: var(--vs-secondary);
+}
+
+.vs-timeline-step h5 {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--vs-text);
+}
+
+.vs-timeline-step p {
+  font-size: 0.78rem;
+  color: var(--vs-text-muted);
+}
+
+/* Tracking Map Viewport */
+.vs-tracking-map {
+  position: relative;
+  background: #0B132B;
+  border: 1px solid var(--vs-border);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  min-height: 580px;
+}
+
+.vs-simulated-canvas {
+  width: 100%;
+  height: 100%;
+  min-height: 580px;
+  position: relative;
+}
+
+/* ==========================================================================
+   FORMS (Driver Registration, Logistics, Contact, Login)
+   ========================================================================== */
+
+.vs-form-card {
+  background: var(--vs-surface);
+  border: 1px solid var(--vs-border);
+  border-radius: var(--radius-xl);
+  padding: 40px;
+  box-shadow: var(--shadow-lg);
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+.vs-form-2col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.vs-form-3col {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+}
+
+.vs-form-hint {
+  font-size: 0.78rem;
+  color: var(--vs-text-muted);
+}
+
+.vs-form-error {
+  font-size: 0.78rem;
+  color: #EF4444;
+  display: none;
+  font-weight: 600;
+}
+
+.vs-form-error.is-visible {
+  display: block;
+}
+
+.vs-checkbox-label {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.88rem;
+  color: var(--vs-text-muted);
+  cursor: pointer;
+}
+
+.vs-checkbox-label input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--vs-primary);
+  margin-top: 2px;
+}
+
+.vs-file-upload {
+  border: 2px dashed var(--vs-border-strong);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  text-align: center;
+  background: var(--vs-surface-alt);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.vs-file-upload:hover {
+  border-color: var(--vs-primary);
+  background: var(--vs-primary-light);
+}
+
+/* Authentication Tab Switch */
+.vs-auth-card {
+  max-width: 480px;
+  margin: 40px auto;
+  background: var(--vs-surface);
+  border: 1px solid var(--vs-border);
+  border-radius: var(--radius-xl);
+  padding: 36px;
+  box-shadow: var(--shadow-xl);
+}
+
+.vs-auth-tabs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  background: var(--vs-surface-alt);
+  padding: 6px;
+  border-radius: var(--radius-md);
+  margin-bottom: 28px;
+}
+
+.vs-auth-tab {
+  background: none;
+  border: none;
+  padding: 10px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--vs-text-muted);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.vs-auth-tab.is-active {
+  background: var(--vs-surface);
+  color: var(--vs-primary);
+  box-shadow: var(--shadow-sm);
+}
+
+.vs-auth-divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 24px 0;
+  color: var(--vs-text-light);
+  font-size: 0.82rem;
+  text-transform: uppercase;
+}
+
+.vs-auth-divider::before,
+.vs-auth-divider::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid var(--vs-border);
+}
+
+.vs-auth-divider span {
+  padding: 0 12px;
+}
+
+/* ==========================================================================
+   MODALS & TOASTS
+   ========================================================================== */
+
+.vs-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(11, 19, 43, 0.7);
+  backdrop-filter: blur(8px);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all var(--transition-base);
+}
+
+.vs-modal-backdrop.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.vs-modal {
+  background: var(--vs-surface);
+  border: 1px solid var(--vs-border);
+  border-radius: var(--radius-xl);
+  padding: 36px;
+  max-width: 540px;
+  width: 100%;
+  box-shadow: var(--shadow-xl);
+  transform: scale(0.92) translateY(20px);
+  transition: all var(--transition-base);
+  position: relative;
+}
+
+.vs-modal-backdrop.is-open .vs-modal {
+  transform: scale(1) translateY(0);
+}
+
+.vs-modal-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: var(--vs-surface-alt);
+  border: none;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--vs-text-muted);
+  transition: all var(--transition-fast);
+}
+
+.vs-modal-close:hover {
+  background: var(--vs-border);
+  color: var(--vs-text);
+}
+
+.vs-modal-icon-badge {
+  width: 68px;
+  height: 68px;
+  border-radius: var(--radius-full);
+  background: var(--vs-secondary-light);
+  color: var(--vs-secondary-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  font-size: 2rem;
+}
+
+/* Toast Container */
+.vs-toast-container {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 3000;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.vs-toast {
+  background: var(--vs-dark);
+  color: #FFFFFF;
+  padding: 14px 20px;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-xl);
+  font-size: 0.9rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  animation: toastSlideIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  border-left: 4px solid var(--vs-primary);
+  max-width: 380px;
+}
+
+.vs-toast.success {
+  border-left-color: var(--vs-secondary);
+}
+
+/* Back to Top Floating Button */
+.vs-back-to-top {
+  position: fixed;
+  bottom: 24px;
+  left: 24px;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-full);
+  background: var(--vs-surface);
+  border: 1px solid var(--vs-border);
+  color: var(--vs-text);
+  box-shadow: var(--shadow-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(12px);
+  transition: all var(--transition-base);
+  z-index: 990;
+}
+
+.vs-back-to-top.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.vs-back-to-top:hover {
+  background: var(--vs-primary);
+  color: #FFFFFF;
+  border-color: var(--vs-primary);
+}
+
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
+
+.vs-footer {
+  background: var(--vs-dark);
+  color: #FFFFFF;
+  padding: 80px 0 32px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.vs-footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr 1.2fr;
+  gap: 40px;
+  margin-bottom: 60px;
+}
+
+.vs-footer-brand p {
+  color: #94A3B8;
+  font-size: 0.92rem;
+  line-height: 1.6;
+  margin-top: 16px;
+  max-width: 320px;
+}
+
+.vs-footer-col h4 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin-bottom: 20px;
+  letter-spacing: 0.5px;
+}
+
+.vs-footer-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.vs-footer-links a {
+  color: #94A3B8;
+  font-size: 0.9rem;
+  transition: color var(--transition-fast);
+}
+
+.vs-footer-links a:hover {
+  color: var(--vs-primary);
+}
+
+.vs-footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 32px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 0.85rem;
+  color: #64748B;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.vs-social-links {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.vs-social-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.06);
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-fast);
+}
+
+.vs-social-btn:hover {
+  background: var(--vs-primary);
+  transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   ANIMATIONS & KEYFRAMES
+   ========================================================================== */
+
+@keyframes pulseRadar {
+  0% { transform: scale(0.95); opacity: 0.8; }
+  50% { transform: scale(1.3); opacity: 0.3; }
+  100% { transform: scale(0.95); opacity: 0.8; }
+}
+
+@keyframes floatMotion {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes toastSlideIn {
+  from { transform: translateX(100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+/* Intersection Observer Scroll Reveal */
+.vs-reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.vs-reveal.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ==========================================================================
+   RESPONSIVE MEDIA QUERIES (320px, 425px, 768px, 1024px, 1200px, 1440px)
+   ========================================================================== */
+
+@media (max-width: 1200px) {
+  .vs-nav-menu, .vs-nav-actions .vs-btn, .vs-nav-actions .js-nav-auth {
+    display: none !important;
+  }
+  .vs-mobile-toggle {
+    display: block;
+  }
+  .vs-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .vs-booking-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .vs-map-layout, .vs-tracking-layout {
+    grid-template-columns: 1fr;
+  }
+  .vs-footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+}
+
+@media (max-width: 768px) {
+  .vs-booking-grid {
+    grid-template-columns: 1fr;
+  }
+  .vs-form-2col, .vs-form-3col {
+    grid-template-columns: 1fr;
+  }
+  .vs-footer-grid {
+    grid-template-columns: 1fr;
+  }
+  .vs-hero-section {
+    padding: 36px 0 60px;
+  }
+  .vs-booking-card {
+    padding: 20px;
+  }
+  .vs-form-card {
+    padding: 24px;
+  }
+  .vs-floating-card {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .vs-nav-wrap {
+    height: 64px;
+  }
+  .vs-brand {
+    min-width: 130px;
+  }
+  .vs-brand-logo-img {
+    height: 38px;
+  }
+  .vs-btn {
+    padding: 9px 16px;
+    font-size: 0.85rem;
+  }
+  .vs-estimate-actions {
+    width: 100%;
+    flex-direction: column;
+  }
+  .vs-estimate-actions .vs-btn {
+    width: 100%;
+  }
+  .vs-vehicle-chips {
+    grid-template-columns: 1fr 1fr;
+  }
+}

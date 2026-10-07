@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Goods & Freight Logistics — Vahan Setu | Tata Ace, Mini Trucks & Heavy Containers</title>
+  <meta name="description" content="Pan-India logistics and commercial freight solutions. Instant quote for Tata Ace, 14ft trucks, 32ft containers, and multi-axle freight carriers." />
+  <link rel="icon" type="image/svg+xml" href="images/logo/favicon.svg" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- Sticky Navbar -->
+  <header class="vs-navbar">
+    <div class="vs-container-wide">
+      <div class="vs-nav-wrap">
+        <a href="index.html" class="vs-brand" aria-label="Vahan Setu Home">
+          <img src="images/logo/vahan-setu-logo.svg" alt="Vahan Setu Logo" class="vs-brand-logo-img" />
+        </a>
+
+        <nav aria-label="Primary Navigation">
+          <ul class="vs-nav-menu">
+            <li><a href="index.html" class="vs-nav-link">Home</a></li>
+            <li><a href="booking.html" class="vs-nav-link">Book Ride</a></li>
+            <li><a href="services.html" class="vs-nav-link">Services</a></li>
+            <li><a href="vehicles.html" class="vs-nav-link">Vehicles</a></li>
+            <li><a href="outstation.html" class="vs-nav-link">Outstation</a></li>
+            <li><a href="logistics.html" class="vs-nav-link is-active">Logistics</a></li>
+            <li><a href="tracking.html" class="vs-nav-link">Track Vehicle</a></li>
+            <li><a href="location.html" class="vs-nav-link">Location</a></li>
+            <li><a href="about.html" class="vs-nav-link">About</a></li>
+            <li><a href="contact.html" class="vs-nav-link">Contact</a></li>
+          </ul>
+        </nav>
+
+        <div class="vs-nav-actions">
+          <button type="button" class="vs-theme-btn js-theme-toggle" aria-label="Toggle Dark/Light Mode">
+            <span class="js-theme-icon"></span>
+          </button>
+          <div class="js-nav-auth" style="display:flex; align-items:center; gap:8px;">
+            <a href="login.html" class="vs-btn vs-btn-secondary" style="padding: 8px 16px;">Login</a>
+          </div>
+          <a href="booking.html" class="vs-btn vs-btn-primary">Book Now</a>
+          <button type="button" class="vs-mobile-toggle" aria-label="Open Navigation Menu">
+            <div class="vs-hamburger"><span></span><span></span><span></span></div>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <aside class="vs-mobile-drawer">
+    <ul class="vs-mobile-menu">
+      <li><a href="index.html">Home <span>➔</span></a></li>
+      <li><a href="booking.html">Book Ride <span>➔</span></a></li>
+      <li><a href="services.html">Services <span>➔</span></a></li>
+      <li><a href="vehicles.html">Vehicles <span>➔</span></a></li>
+      <li><a href="outstation.html">Outstation Travel <span>➔</span></a></li>
+      <li><a href="logistics.html" class="is-active">Goods & Logistics <span>➔</span></a></li>
+      <li><a href="driver.html">Driver Partner Registration <span>➔</span></a></li>
+      <li><a href="tracking.html">Live Vehicle Tracking <span>➔</span></a></li>
+      <li><a href="location.html">India Transit Map <span>➔</span></a></li>
+      <li><a href="about.html">About Vahan Setu <span>➔</span></a></li>
+      <li><a href="contact.html">Contact Us (Vikas Yogi) <span>➔</span></a></li>
+    </ul>
+  </aside>
+
+  <!-- Logistics Main Section -->
+  <main class="vs-section" style="padding-top: 40px;">
+    <div class="vs-container">
+      
+      <!-- Page Header -->
+      <div style="text-align: center; max-width: 720px; margin: 0 auto 36px;" class="vs-reveal">
+        <span style="font-size: 0.85rem; font-weight: 800; color: var(--vs-primary); letter-spacing: 1.5px; text-transform: uppercase;">
+          Commercial Goods Transportation
+        </span>
+        <h1 style="font-size: clamp(2rem, 3.5vw, 2.8rem); font-weight: 900; color: var(--vs-text); margin-top: 6px;">
+          Fast, Safe & Tracked Logistics Across India
+        </h1>
+        <p style="color: var(--vs-text-muted); font-size: 1.05rem;">
+          From intracity house relocations and parcel delivery to cross-state industrial container freight. Verified commercial transport captains with digital consignment receipts.
+        </p>
+      </div>
+
+      <!-- Logistics Form Card -->
+      <div class="vs-form-card vs-reveal" style="margin-bottom: 60px;">
+        <div style="border-bottom: 1px solid var(--vs-border); padding-bottom: 20px; margin-bottom: 24px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;">
+          <h2 style="font-size: 1.35rem; font-weight: 800; color: var(--vs-text);">
+            Goods Transport Request
+          </h2>
+          <div style="font-size: 0.82rem; color: var(--vs-secondary-dark); background: var(--vs-secondary-light); padding: 4px 12px; border-radius: var(--radius-full); font-weight: 700;">
+            ✔ GPS Telematics & Insurance Included
+          </div>
+        </div>
+
+        <form id="logistics-form">
+          
+          <!-- Locations -->
+          <div class="vs-form-2col" style="margin-bottom: 20px;">
+            <div class="vs-form-group">
+              <label class="vs-form-label" for="log-pickup">Pickup Address / Warehouse</label>
+              <div class="vs-input-wrapper">
+                <span class="vs-input-icon">📍</span>
+                <input type="text" id="log-pickup" name="pickup_address" class="vs-input" placeholder="Plot / Warehouse No, Industrial Area, City" required />
+              </div>
+            </div>
+
+            <div class="vs-form-group">
+              <label class="vs-form-label" for="log-delivery">Delivery Address / Destination</label>
+              <div class="vs-input-wrapper">
+                <span class="vs-input-icon">🏁</span>
+                <input type="text" id="log-delivery" name="delivery_address" class="vs-input" placeholder="Factory / Retail Store / Recipient Address" required />
+              </div>
+            </div>
+          </div>
+
+          <!-- Goods Details -->
+          <div class="vs-form-3col" style="margin-bottom: 20px;">
+            <div class="vs-form-group">
+              <label class="vs-form-label" for="log-goods-type">Goods Classification</label>
+              <div class="vs-input-wrapper">
+                <span class="vs-input-icon">📦</span>
+                <select id="log-goods-type" name="goods_type" class="vs-input vs-select">
+                  <option value="household">Household Furniture & Shifting</option>
+                  <option value="commercial">Commercial Goods & Retail</option>
+                  <option value="industrial">Machinery & Industrial Parts</option>
+                  <option value="fragile">Fragile / Electronics / Glass</option>
+                  <option value="fmcg">FMCG & Agricultural Produce</option>
+                  <option value="construction">Construction Materials & Hardware</option>
+                </select>
+                <span class="vs-select-arrow">▼</span>
+              </div>
+            </div>
+
+            <div class="vs-form-group">
+              <label class="vs-form-label" for="log-weight">Total Weight (Kg / Tons)</label>
+              <div class="vs-input-wrapper">
+                <span class="vs-input-icon">⚖️</span>
+                <input type="number" id="log-weight" name="goods_weight" class="vs-input" placeholder="e.g. 750" value="500" min="50" max="25000" required />
+              </div>
+            </div>
+
+            <div class="vs-form-group">
+              <label class="vs-form-label" for="log-vehicle">Vehicle Required</label>
+              <div class="vs-input-wrapper">
+                <span class="vs-input-icon">🚚</span>
+                <select id="log-vehicle" name="logistics_vehicle" class="vs-input vs-select">
+                  <option value="pickup" selected>Pickup (Tata Ace / 1.2 Ton)</option>
+                  <option value="mini_truck">Mini Truck (Mahindra Bolero / 1.7 Ton)</option>
+                  <option value="truck">14ft Commercial Truck (5 Ton)</option>
+                  <option value="container">20ft / 32ft High Cube Container (15 Ton)</option>
+                  <option value="heavy">Multi-Axle Heavy Commercial (25 Ton)</option>
+                </select>
+                <span class="vs-select-arrow">▼</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Schedule & Contact Details -->
+          <div class="vs-form-2col" style="margin-bottom: 20px;">
+            <div class="vs-form-group">
+              <label class="vs-form-label" for="log-date">Pickup Date</label>
+              <div class="vs-input-wrapper">
+                <span class="vs-input-icon">📅</span>
+                <input type="date" id="log-date" name="pickup_date" class="vs-input" required />
+              </div>
+            </div>
+
+            <div class="vs-form-group">
+              <label class="vs-form-label" for="log-time">Pickup Time Slot</label>
+              <div class="vs-input-wrapper">
+                <span class="vs-input-icon">⏰</span>
+                <input type="time" id="log-time" name="pickup_time" class="vs-input" required />
+              </div>
+            </div>
+          </div>
+
+          <div class="vs-form-2col" style="margin-bottom: 24px;">
+            <div class="vs-form-group">
+              <label class="vs-form-label" for="log-name">Consignor Name</label>
+              <div class="vs-input-wrapper">
+                <span class="vs-input-icon">👤</span>
+                <input type="text" id="log-name" name="customer_name" class="vs-input" placeholder="Full Name or Business Name" required />
+              </div>
+            </div>
+
+            <div class="vs-form-group">
+              <label class="vs-form-label" for="log-phone">Mobile Number</label>
+              <div class="vs-input-wrapper">
+                <span class="vs-input-icon">📞</span>
+                <input type="tel" id="log-phone" name="customer_phone" class="vs-input" placeholder="10-digit mobile number" pattern="[6-9][0-9]{9}" required />
+              </div>
+            </div>
+          </div>
+
+          <!-- Live Freight Estimate & Submit Bar -->
+          <div style="background: var(--vs-surface-alt); border-radius: var(--radius-lg); padding: 20px 24px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px;">
+            <div>
+              <span style="font-size: 0.78rem; font-weight: 700; color: var(--vs-text-muted); text-transform: uppercase;">Estimated Starting Freight Cost:</span>
+              <div id="logistics-est-fare" style="font-size: 1.6rem; font-weight: 900; color: var(--vs-primary);">₹650</div>
+              <div style="font-size: 0.78rem; color: var(--vs-text-muted);">Includes loading assistance & GST e-way slip</div>
+            </div>
+
+            <button type="submit" class="vs-btn vs-btn-primary" style="padding: 14px 32px; font-size: 1.05rem;">
+              Request Transport ➔
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Logistics Fleet Highlights -->
+      <div class="vs-reveal">
+        <div style="text-align: center; margin-bottom: 32px;">
+          <h2 style="font-size: 1.8rem; font-weight: 800; color: var(--vs-text);">
+            Vahan Setu Commercial Freight Capacities
+          </h2>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px;">
+          
+          <div class="vs-vehicle-card">
+            <div class="vs-vehicle-img-wrap">
+              <img src="images/trucks/pickup.svg" alt="Tata Ace" />
+            </div>
+            <h3 class="vs-vehicle-name">Tata Ace / Dost (Chota Hathi)</h3>
+            <p style="font-size: 0.85rem; color: var(--vs-text-muted); margin: 8px 0 14px;">
+              Ideal for 1BHK household shifts, e-commerce drops, retail supply, and small business deliveries within cities.
+            </p>
+            <div style="font-size: 0.85rem; font-weight: 700; color: var(--vs-text);">
+              Payload: Up to 1,200 Kg · 7ft Bed Length
+            </div>
+          </div>
+
+          <div class="vs-vehicle-card">
+            <div class="vs-vehicle-img-wrap">
+              <img src="images/trucks/truck.svg" alt="14ft Truck" />
+            </div>
+            <h3 class="vs-vehicle-name">14ft / 19ft Closed Container</h3>
+            <p style="font-size: 0.85rem; color: var(--vs-text-muted); margin: 8px 0 14px;">
+              Waterproof weather-sealed metal body for industrial components, electronics, pharmaceuticals, and large furniture.
+            </p>
+            <div style="font-size: 0.85rem; font-weight: 700; color: var(--vs-text);">
+              Payload: 5,000 Kg to 8,000 Kg · All-Weather Sealed
+            </div>
+          </div>
+
+          <div class="vs-vehicle-card">
+            <div class="vs-vehicle-img-wrap">
+              <img src="images/trucks/container.svg" alt="32ft Container" />
+            </div>
+            <h3 class="vs-vehicle-name">32ft High-Cube Multi-Axle</h3>
+            <p style="font-size: 0.85rem; color: var(--vs-text-muted); margin: 8px 0 14px;">
+              Heavy interstate supply chain transport, automotive freight, textile bulk, and agricultural consignments across India.
+            </p>
+            <div style="font-size: 0.85rem; font-weight: 700; color: var(--vs-text);">
+              Payload: Up to 20 Tons · GPS Digital Lock
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Pre-fill today's date -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const dateInput = document.getElementById('log-date');
+      const timeInput = document.getElementById('log-time');
+      if (dateInput) {
+        const today = new Date().toISOString().split('T')[0];
+        dateInput.value = today;
+        dateInput.min = today;
+      }
+      if (timeInput) {
+        const now = new Date();
+        now.setHours(now.getHours() + 1);
+        timeInput.value = now.toTimeString().substring(0, 5);
+      }
+    });
+  </script>
+
+  <!-- Footer -->
+  <footer class="vs-footer">
+    <div class="vs-container">
+      <div class="vs-footer-bottom">
+        <div>© 2026 Vahan Setu Technologies Ltd. All rights reserved. Connecting India, One Journey at a Time.</div>
+        <div>Contact: Vikas Yogi (+91 9461695205)</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

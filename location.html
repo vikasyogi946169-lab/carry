@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>India Network & Location Map — Vahan Setu | 120+ Cities Connected</title>
+  <meta name="description" content="Explore Vahan Setu across India. Search city hubs, calculate highway distance between Indian metro corridors, view fleet availability, and route details." />
+  <link rel="icon" type="image/svg+xml" href="images/logo/favicon.svg" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="js-location-page">
+
+  <!-- Sticky Navbar -->
+  <header class="vs-navbar">
+    <div class="vs-container-wide">
+      <div class="vs-nav-wrap">
+        <a href="index.html" class="vs-brand" aria-label="Vahan Setu Home">
+          <img src="images/logo/vahan-setu-logo.svg" alt="Vahan Setu Logo" class="vs-brand-logo-img" />
+        </a>
+
+        <nav aria-label="Primary Navigation">
+          <ul class="vs-nav-menu">
+            <li><a href="index.html" class="vs-nav-link">Home</a></li>
+            <li><a href="booking.html" class="vs-nav-link">Book Ride</a></li>
+            <li><a href="services.html" class="vs-nav-link">Services</a></li>
+            <li><a href="vehicles.html" class="vs-nav-link">Vehicles</a></li>
+            <li><a href="outstation.html" class="vs-nav-link">Outstation</a></li>
+            <li><a href="logistics.html" class="vs-nav-link">Logistics</a></li>
+            <li><a href="tracking.html" class="vs-nav-link">Track Vehicle</a></li>
+            <li><a href="location.html" class="vs-nav-link is-active">Location</a></li>
+            <li><a href="about.html" class="vs-nav-link">About</a></li>
+            <li><a href="contact.html" class="vs-nav-link">Contact</a></li>
+          </ul>
+        </nav>
+
+        <div class="vs-nav-actions">
+          <button type="button" class="vs-theme-btn js-theme-toggle" aria-label="Toggle Dark/Light Mode">
+            <span class="js-theme-icon"></span>
+          </button>
+          <div class="js-nav-auth" style="display:flex; align-items:center; gap:8px;">
+            <a href="login.html" class="vs-btn vs-btn-secondary" style="padding: 8px 16px;">Login</a>
+          </div>
+          <a href="booking.html" class="vs-btn vs-btn-primary">Book Now</a>
+          <button type="button" class="vs-mobile-toggle" aria-label="Open Navigation Menu">
+            <div class="vs-hamburger"><span></span><span></span><span></span></div>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <aside class="vs-mobile-drawer">
+    <ul class="vs-mobile-menu">
+      <li><a href="index.html">Home <span>➔</span></a></li>
+      <li><a href="booking.html">Book Ride <span>➔</span></a></li>
+      <li><a href="services.html">Services <span>➔</span></a></li>
+      <li><a href="vehicles.html">Vehicles <span>➔</span></a></li>
+      <li><a href="outstation.html">Outstation Travel <span>➔</span></a></li>
+      <li><a href="logistics.html">Goods & Logistics <span>➔</span></a></li>
+      <li><a href="driver.html">Driver Partner Registration <span>➔</span></a></li>
+      <li><a href="tracking.html">Live Vehicle Tracking <span>➔</span></a></li>
+      <li><a href="location.html" class="is-active">India Transit Map <span>➔</span></a></li>
+      <li><a href="about.html">About Vahan Setu <span>➔</span></a></li>
+      <li><a href="contact.html">Contact Us (Vikas Yogi) <span>➔</span></a></li>
+    </ul>
+  </aside>
+
+  <!-- Main India Location Content -->
+  <main class="vs-section" style="padding-top: 36px;">
+    <div class="vs-container-wide">
+      
+      <!-- Page Header -->
+      <div style="margin-bottom: 28px;" class="vs-reveal">
+        <span style="font-size: 0.82rem; font-weight: 800; color: var(--vs-primary); letter-spacing: 1.5px; text-transform: uppercase;">
+          National Route Intelligence & Hubs
+        </span>
+        <h1 style="font-size: clamp(1.8rem, 3.2vw, 2.6rem); font-weight: 900; color: var(--vs-text); margin-top: 4px;">
+          Explore Vahan Setu Across India
+        </h1>
+        <p style="color: var(--vs-text-muted); font-size: 1.05rem;">
+          Select any origin and destination across India to view estimated road distances, highway corridors, travel durations, and fleet readiness.
+        </p>
+      </div>
+
+      <!-- Map Explorer Layout -->
+      <div class="vs-map-layout">
+        
+        <!-- Left Sidebar: City Search & Route Planner -->
+        <div class="vs-map-sidebar vs-reveal">
+          
+          <!-- Search City Box -->
+          <div style="margin-bottom: 24px;">
+            <label class="vs-form-label" for="city-search-input">Search City or State Hub</label>
+            <div class="vs-input-wrapper">
+              <span class="vs-input-icon">🔍</span>
+              <input type="text" id="city-search-input" class="vs-input" placeholder="Type Delhi, Mumbai, Jaipur, Bengaluru..." />
+            </div>
+          </div>
+
+          <!-- Quick City Filter Chips -->
+          <div style="margin-bottom: 24px;">
+            <span style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; color: var(--vs-text-muted); display: block; margin-bottom: 8px;">
+              Popular Operating Hubs:
+            </span>
+            <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+              <button type="button" class="vs-filter-btn js-city-filter is-active" data-city="Delhi">Delhi NCR</button>
+              <button type="button" class="vs-filter-btn js-city-filter" data-city="Mumbai">Mumbai</button>
+              <button type="button" class="vs-filter-btn js-city-filter" data-city="Bengaluru">Bengaluru</button>
+              <button type="button" class="vs-filter-btn js-city-filter" data-city="Jaipur">Jaipur</button>
+              <button type="button" class="vs-filter-btn js-city-filter" data-city="Hyderabad">Hyderabad</button>
+              <button type="button" class="vs-filter-btn js-city-filter" data-city="Chennai">Chennai</button>
+              <button type="button" class="vs-filter-btn js-city-filter" data-city="Kolkata">Kolkata</button>
+              <button type="button" class="vs-filter-btn js-city-filter" data-city="Ahmedabad">Ahmedabad</button>
+            </div>
+          </div>
+
+          <!-- Interactive Route Calculator -->
+          <div style="border-top: 1px solid var(--vs-border); padding-top: 20px;">
+            <h3 style="font-size: 1.05rem; font-weight: 800; color: var(--vs-text); margin-bottom: 14px;">
+              Interactive Corridor Estimator
+            </h3>
+
+            <div class="vs-form-group" style="margin-bottom: 12px;">
+              <label class="vs-form-label" for="loc-from-city">
+                <span style="color:var(--vs-secondary);">●</span> Origin City Hub
+              </label>
+              <div class="vs-input-wrapper">
+                <span class="vs-input-icon">📍</span>
+                <select id="loc-from-city" class="vs-input vs-select">
+                  <option value="Delhi" selected>New Delhi NCR (North Hub)</option>
+                  <option value="Mumbai">Mumbai (West Hub)</option>
+                  <option value="Bengaluru">Bengaluru (South Hub)</option>
+                  <option value="Jaipur">Jaipur (Rajasthan Hub)</option>
+                  <option value="Hyderabad">Hyderabad (Deccan Hub)</option>
+                  <option value="Chennai">Chennai (Coromandel Hub)</option>
+                  <option value="Kolkata">Kolkata (East Hub)</option>
+                  <option value="Ahmedabad">Ahmedabad (Gujarat Hub)</option>
+                  <option value="Chandigarh">Chandigarh (Tricity Hub)</option>
+                  <option value="Lucknow">Lucknow (Awadh Hub)</option>
+                  <option value="Pune">Pune (Western Ghats Hub)</option>
+                  <option value="Kochi">Kochi (Kerala Coastal Hub)</option>
+                </select>
+                <span class="vs-select-arrow">▼</span>
+              </div>
+            </div>
+
+            <div class="vs-form-group" style="margin-bottom: 16px;">
+              <label class="vs-form-label" for="loc-to-city">
+                <span style="color:var(--vs-primary);">■</span> Destination City Hub
+              </label>
+              <div class="vs-input-wrapper">
+                <span class="vs-input-icon">🏁</span>
+                <select id="loc-to-city" class="vs-input vs-select">
+                  <option value="Mumbai" selected>Mumbai (West Hub)</option>
+                  <option value="Delhi">New Delhi NCR (North Hub)</option>
+                  <option value="Bengaluru">Bengaluru (South Hub)</option>
+                  <option value="Jaipur">Jaipur (Rajasthan Hub)</option>
+                  <option value="Hyderabad">Hyderabad (Deccan Hub)</option>
+                  <option value="Chennai">Chennai (Coromandel Hub)</option>
+                  <option value="Kolkata">Kolkata (East Hub)</option>
+                  <option value="Ahmedabad">Ahmedabad (Gujarat Hub)</option>
+                  <option value="Chandigarh">Chandigarh (Tricity Hub)</option>
+                  <option value="Lucknow">Lucknow (Awadh Hub)</option>
+                  <option value="Pune">Pune (Western Ghats Hub)</option>
+                  <option value="Kochi">Kochi (Kerala Coastal Hub)</option>
+                </select>
+                <span class="vs-select-arrow">▼</span>
+              </div>
+            </div>
+
+            <!-- Route Summary generated dynamically via script.js -->
+            <div id="loc-route-summary"></div>
+          </div>
+
+        </div>
+
+        <!-- Right: Interactive Vector Geographic Canvas -->
+        <div class="vs-map-display-card vs-reveal">
+          <!-- Embed India Map Vector -->
+          <img src="images/banners/india-map-vector.svg" alt="India Transit Corridor Network Map" style="width: 100%; height: auto; min-height: 640px;" />
+
+          <!-- Overlay Legend Card -->
+          <div class="vs-map-overlay-card">
+            <div>
+              <h4 style="font-size: 1rem; font-weight: 800; color: #FFFFFF; margin-bottom: 2px;">
+                Vahan Setu Pan-India Transport Corridor
+              </h4>
+              <p style="font-size: 0.8rem; color: #94A3B8;">
+                Orange lines: Golden Quadrilateral & National Expressways · Cyan: North-South Corridor
+              </p>
+            </div>
+
+            <div style="display: flex; gap: 10px;">
+              <a href="booking.html" class="vs-btn vs-btn-primary" style="padding: 8px 16px; font-size: 0.85rem;">
+                Book Interstate Cab
+              </a>
+              <a href="logistics.html" class="vs-btn vs-btn-secondary" style="padding: 8px 16px; font-size: 0.85rem; color:#fff; background:rgba(255,255,255,0.12); border-color:transparent;">
+                Freight Logistics
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="vs-footer">
+    <div class="vs-container">
+      <div class="vs-footer-bottom">
+        <div>© 2026 Vahan Setu Technologies Ltd. All rights reserved. Connecting India, One Journey at a Time.</div>
+        <div>Contact: Vikas Yogi (+91 9461695205)</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

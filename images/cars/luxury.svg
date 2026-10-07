@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 190 100" fill="none">
+  <defs>
+    <linearGradient id="luxGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E293B" />
+      <stop offset="50%" stop-color="#0F172A" />
+      <stop offset="100%" stop-color="#020617" />
+    </linearGradient>
+    <linearGradient id="goldTrim" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#F59E0B" />
+      <stop offset="100%" stop-color="#FCD34D" />
+    </linearGradient>
+  </defs>
+  <ellipse cx="95" cy="88" rx="88" ry="6" fill="#000000" opacity="0.25" />
+  <!-- Chrome Alloy Wheels -->
+  <circle cx="44" cy="74" r="16" fill="#020617" />
+  <circle cx="44" cy="74" r="10" fill="#E2E8F0" stroke="#94A3B8" stroke-width="2" />
+  <circle cx="44" cy="74" r="4" fill="#F59E0B" />
+  <circle cx="146" cy="74" r="16" fill="#020617" />
+  <circle cx="146" cy="74" r="10" fill="#E2E8F0" stroke="#94A3B8" stroke-width="2" />
+  <circle cx="146" cy="74" r="4" fill="#F59E0B" />
+  <!-- Luxury Body with aerodynamic sweep -->
+  <path d="M12 68 L14 52 C 16 48, 22 46, 36 46 L58 46 L82 24 C 88 20, 96 20, 132 20 L156 36 L174 46 C 182 46, 186 52, 184 62 L180 68 L158 70 L136 70 L54 70 L32 70 Z" fill="url(#luxGrad)" />
+  <!-- Chrome/Gold waistline strip -->
+  <path d="M24 49 L176 49" stroke="url(#goldTrim)" stroke-width="1.5" />
+  <!-- Tinted Privacy Glass -->
+  <path d="M64 43 L84 25 C 88 23, 96 23, 104 23 L104 43 Z" fill="#38BDF8" opacity="0.4" />
+  <path d="M108 23 L128 23 C 132 23, 138 26, 148 36 L152 43 L108 43 Z" fill="#38BDF8" opacity="0.4" />
+  <!-- LED Headlamps with laser blue/white glow -->
+  <path d="M172 50 L182 52 L178 58 L170 58 Z" fill="#E0F2FE" stroke="#38BDF8" stroke-width="1" />
+  <path d="M16 52 L12 56 L16 58 Z" fill="#DC2626" />
+  <!-- Gold door handles -->
+  <rect x="94" y="51" width="10" height="2" rx="1" fill="#F59E0B" />
+  <rect x="122" y="51" width="10" height="2" rx="1" fill="#F59E0B" />
+</svg>

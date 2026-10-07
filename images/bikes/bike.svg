@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 100" fill="none">
+  <defs>
+    <linearGradient id="bikeBody" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF7A00" />
+      <stop offset="100%" stop-color="#E04000" />
+    </linearGradient>
+  </defs>
+  <!-- Road shadow -->
+  <ellipse cx="80" cy="88" rx="65" ry="6" fill="#000000" opacity="0.12" />
+  <!-- Wheels -->
+  <circle cx="38" cy="68" r="20" fill="#1C2541" />
+  <circle cx="38" cy="68" r="13" fill="#E2E8F0" />
+  <circle cx="38" cy="68" r="5" fill="#1C2541" />
+  <circle cx="122" cy="68" r="20" fill="#1C2541" />
+  <circle cx="122" cy="68" r="13" fill="#E2E8F0" />
+  <circle cx="122" cy="68" r="5" fill="#1C2541" />
+  <!-- Frame & Tank -->
+  <path d="M42 66 L68 45 L94 45 L118 66" stroke="#475569" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" />
+  <path d="M68 45 L78 68 L104 68 L114 52" stroke="#334155" stroke-width="4" stroke-linejoin="round" />
+  <!-- Fuel Tank & Seat -->
+  <path d="M72 42 C 78 35, 96 35, 102 44 C 95 48, 80 48, 72 42 Z" fill="url(#bikeBody)" />
+  <path d="M52 44 C 60 42, 70 42, 74 44 L70 48 C 62 48, 54 48, 52 44 Z" fill="#0F172A" />
+  <!-- Handlebars & Windshield -->
+  <path d="M102 44 L110 32 L105 28" stroke="#0F172A" stroke-width="3.5" stroke-linecap="round" />
+  <circle cx="114" cy="34" r="3.5" fill="#F8FAFC" />
+  <!-- Exhaust -->
+  <path d="M80 72 L50 72" stroke="#94A3B8" stroke-width="3" stroke-linecap="round" />
+  <!-- Headlight beam subtle -->
+  <path d="M115 34 L138 28 L142 42 Z" fill="#FEF08A" opacity="0.4" />
+</svg>

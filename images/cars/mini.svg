@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 100" fill="none">
+  <defs>
+    <linearGradient id="miniGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0284C7" />
+      <stop offset="100%" stop-color="#0369A1" />
+    </linearGradient>
+  </defs>
+  <!-- Shadow -->
+  <ellipse cx="90" cy="88" rx="80" ry="6" fill="#000000" opacity="0.15" />
+  <!-- Wheels -->
+  <circle cx="44" cy="74" r="16" fill="#1E293B" />
+  <circle cx="44" cy="74" r="9" fill="#94A3B8" />
+  <circle cx="44" cy="74" r="4" fill="#0F172A" />
+  <circle cx="134" cy="74" r="16" fill="#1E293B" />
+  <circle cx="134" cy="74" r="9" fill="#94A3B8" />
+  <circle cx="134" cy="74" r="4" fill="#0F172A" />
+  <!-- Body Hatchback -->
+  <path d="M22 68 L24 54 C 25 50, 30 46, 38 46 L62 46 L82 28 C 86 24, 94 24, 114 24 L138 28 C 144 30, 148 38, 154 48 L160 54 C 163 58, 164 64, 162 68 L154 72 L144 72 L124 72 L54 72 L34 72 Z" fill="url(#miniGrad)" />
+  <!-- Windows -->
+  <path d="M66 45 L83 31 C 85 28, 90 28, 104 28 L104 45 Z" fill="#E0F2FE" opacity="0.85" />
+  <path d="M109 28 L134 31 C 138 33, 142 38, 146 45 L109 45 Z" fill="#E0F2FE" opacity="0.85" />
+  <!-- Details & Headlights -->
+  <path d="M154 54 L162 55 L160 62 L150 62 Z" fill="#FEF08A" />
+  <path d="M24 54 L22 60 L28 60 Z" fill="#EF4444" />
+  <!-- Door seam -->
+  <path d="M106 28 L106 70" stroke="#0369A1" stroke-width="2" />
+  <rect x="94" y="52" width="8" height="2.5" rx="1.25" fill="#FFFFFF" />
+  <rect x="114" y="52" width="8" height="2.5" rx="1.25" fill="#FFFFFF" />
+</svg>

@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 110" fill="none">
+  <defs>
+    <linearGradient id="containerBlue" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1E3A8A" />
+      <stop offset="100%" stop-color="#172554" />
+    </linearGradient>
+  </defs>
+  <ellipse cx="120" cy="98" rx="114" ry="7" fill="#000000" opacity="0.2" />
+  <!-- Triple rear trailer wheels -->
+  <circle cx="34" cy="84" r="15" fill="#0F172A" />
+  <circle cx="34" cy="84" r="8" fill="#64748B" />
+  <circle cx="66" cy="84" r="15" fill="#0F172A" />
+  <circle cx="66" cy="84" r="8" fill="#64748B" />
+  <circle cx="98" cy="84" r="15" fill="#0F172A" />
+  <circle cx="98" cy="84" r="8" fill="#64748B" />
+  <circle cx="204" cy="84" r="15" fill="#0F172A" />
+  <circle cx="204" cy="84" r="8" fill="#64748B" />
+  <!-- 32-ft Intermodal Container -->
+  <rect x="14" y="20" width="144" height="60" rx="3" fill="url(#containerBlue)" stroke="#1D4ED8" stroke-width="2" />
+  <line x1="30" y1="22" x2="30" y2="78" stroke="#3B82F6" stroke-width="2" />
+  <line x1="50" y1="22" x2="50" y2="78" stroke="#3B82F6" stroke-width="2" />
+  <line x1="70" y1="22" x2="70" y2="78" stroke="#3B82F6" stroke-width="2" />
+  <line x1="90" y1="22" x2="90" y2="78" stroke="#3B82F6" stroke-width="2" />
+  <line x1="110" y1="22" x2="110" y2="78" stroke="#3B82F6" stroke-width="2" />
+  <line x1="130" y1="22" x2="130" y2="78" stroke="#3B82F6" stroke-width="2" />
+  <text x="86" y="48" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-weight="900" font-size="9" fill="#FF7A00" letter-spacing="1">VAHAN SETU INTERMODAL</text>
+  <text x="86" y="62" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="8" fill="#93C5FD" letter-spacing="0.5">32FT HIGH CUBE · 20 TONS</text>
+  <!-- Heavy Tractor Prime Mover -->
+  <path d="M160 82 L160 30 C 160 22, 166 18, 178 18 L206 18 C 216 18, 222 24, 226 38 L234 60 C 236 66, 236 76, 234 82 L220 82 L188 82 Z" fill="#DC2626" />
+  <!-- Windshield -->
+  <path d="M174 24 L208 24 C 214 24, 218 28, 222 38 L226 50 L174 50 Z" fill="#E0F2FE" opacity="0.85" />
+  <!-- Headlight -->
+  <path d="M230 66 L236 67 L234 74 L228 74 Z" fill="#FEF08A" />
+  <!-- Chrome stack -->
+  <rect x="162" y="10" width="5" height="20" rx="2" fill="#E2E8F0" />
+</svg>

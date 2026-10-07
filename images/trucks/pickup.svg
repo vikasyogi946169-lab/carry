@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 190 100" fill="none">
+  <defs>
+    <linearGradient id="pickupCabin" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="100%" stop-color="#E2E8F0" />
+    </linearGradient>
+    <linearGradient id="pickupBed" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0284C7" />
+      <stop offset="100%" stop-color="#0369A1" />
+    </linearGradient>
+  </defs>
+  <ellipse cx="95" cy="88" rx="88" ry="6" fill="#000000" opacity="0.16" />
+  <!-- Wheels -->
+  <circle cx="44" cy="74" r="16" fill="#1E293B" />
+  <circle cx="44" cy="74" r="9" fill="#94A3B8" />
+  <circle cx="44" cy="74" r="4" fill="#0F172A" />
+  <circle cx="146" cy="74" r="16" fill="#1E293B" />
+  <circle cx="146" cy="74" r="9" fill="#94A3B8" />
+  <circle cx="146" cy="74" r="4" fill="#0F172A" />
+  <!-- Cargo Bed (Blue Box) -->
+  <rect x="16" y="38" width="94" height="34" rx="2" fill="url(#pickupBed)" stroke="#0369A1" stroke-width="1.5" />
+  <line x1="16" y1="52" x2="110" y2="52" stroke="#38BDF8" stroke-width="1.5" stroke-dasharray="6,4" />
+  <!-- Cargo Tarpaulin ties -->
+  <circle cx="28" cy="62" r="2" fill="#E2E8F0" />
+  <circle cx="60" cy="62" r="2" fill="#E2E8F0" />
+  <circle cx="92" cy="62" r="2" fill="#E2E8F0" />
+  <!-- Driver Cabin (White Front) -->
+  <path d="M112 72 L112 36 C 112 28, 118 24, 128 24 L146 24 C 154 24, 160 30, 166 42 L176 56 C 178 60, 178 66, 176 72 L160 72 L132 72 Z" fill="url(#pickupCabin)" stroke="#CBD5E1" stroke-width="1.5" />
+  <!-- Cabin Window -->
+  <path d="M120 30 L144 30 C 148 30, 154 34, 158 44 L162 50 L120 50 Z" fill="#E0F2FE" opacity="0.85" />
+  <!-- Headlamp & Bumper -->
+  <path d="M172 58 L178 60 L176 66 L170 66 Z" fill="#FEF08A" />
+  <rect x="168" y="68" width="10" height="5" rx="1.5" fill="#475569" />
+  <!-- Goods load icon -->
+  <rect x="32" y="28" width="30" height="10" rx="1" fill="#D97706" opacity="0.8" />
+  <rect x="66" y="24" width="24" height="14" rx="1" fill="#B45309" opacity="0.8" />
+</svg>
